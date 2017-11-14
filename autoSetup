@@ -1,0 +1,64 @@
+#!/bin/bash
+
+echo; echo -------- Installing Additional Tools --------; echo;
+apt update 
+apt -y install openssh-server net-tools expect # ssh, ifconfig (and friends), expect (for scripted interaction)
+/etc/init.d/ssh start
+
+echo; echo -------- Installing Python and Pip --------; echo;
+apt -y install python3 python3-pip libmysqlclient-dev # python, pip, libmysqlclient-dev is necessary to get the pip install of mysqlclient to work
+pip3 install --upgrade pip
+pip3 install mysqlclient
+
+echo; echo -------- Installing MySQL --------; echo;
+# setting up password entry setup, for when mysql is installed
+echo "mysql-server mysql-server/root_password password woodensword" | debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password woodensword" | debconf-set-selections
+apt -y install mysql-server
+/etc/init.d/mysql start
+
+echo; echo -------- Setting up a database and user in MySQL --------; echo;
+# using 'expect', we interact with mysql to create a database and user for django to use
+/usr/bin/expect << END
+        spawn mysql -u root -p
+        expect "Enter password: "
+        send "woodensword\r"
+        expect "mysql> "
+        send "create database project;\r"
+        expect "mysql> "
+        send "create user 'app'@'localhost' identified by 'password';\r"
+        expect "mysql> "
+        send "grant all privileges on project.* to 'app'@'localhost';\r"
+        expect "mysql> "
+        send "exit\r"
+END
+
+echo; echo -------- Installing Django --------; echo;
+pip3 install django
+
+echo; echo -------- Setting up a Django project --------; echo;
+django-admin startproject website
+# add ip address to allowed hosts (attempts to find this automatically)
+sed -i -e "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \['$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')'\]/g" website/website/settings.py
+# replace the Django database settings to use the mysql database set up earlier
+sed -i -e  "/'ENGINE': 'django.db.backends.sqlite3',/,/'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),/{/'ENGINE': 'django.db.backends.sqlite3',/ s/.*/\t'ENGINE': 'django.db.backends.mysql',\n\t'NAME': 'project',\n\t'USER': 'app',\n\t'PASSWORD': 'password',\n\t'HOST': 'localhost',\n\t'PORT': '',/; t; d}" website/website/settings.py
+# run the makemigrations function in django (probably useless)
+python3 website/manage.py makemigrations
+# tell django to set itself up in the database
+python3 website/manage.py migrate
+# create the superuser 'root'
+/usr/bin/expect << END
+        spawn python3 website/manage.py createsuperuser
+        expect "Username (leave blank to use 'root'): "
+        send "\r"
+        expect "Email address: "
+        send "\r"
+        expect "Password: "
+        send "woodensword\r"
+        expect "Password (again): "
+        send "woodensword\r"
+        expect "Superuser created successfully."
+END
+
+echo; echo -------- Starting Django Server --------; echo;
+python3 website/manage.py runserver 0.0.0.0:8080
