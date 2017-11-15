@@ -103,7 +103,6 @@ echo; echo -------- Loading Website Content --------; echo;
 # perform load of website content code
 # - coming soon -
 
-
 # echo; echo -------- Starting Django Server --------; echo;
 # python3 website/manage.py runserver 0.0.0.0:8080
 
