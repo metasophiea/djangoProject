@@ -43,11 +43,11 @@ echo; echo -------- Setting up a database and user in MySQL --------; echo;
         expect "Enter password: "
         send "woodensword\r"
         expect "mysql> "
-        send "create database project;\r"
+        send "create database website;\r"
         expect "mysql> "
         send "create user 'app'@'localhost' identified by 'password';\r"
         expect "mysql> "
-        send "grant all privileges on project.* to 'app'@'localhost';\r"
+        send "grant all privileges on website.* to 'app'@'localhost';\r"
         expect "mysql> "
         send "exit\r"
 END
@@ -65,7 +65,7 @@ sed -i -e  "/\
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),/\
 {/'ENGINE': 'django.db.backends.sqlite3',/ s/.*/\
         'ENGINE': 'django.db.backends.mysql',\n\
-        'NAME': 'project',\n\t'USER': 'app',\n\
+        'NAME': 'website',\n\t'USER': 'app',\n\
         'PASSWORD': 'password',\n\
         'HOST': 'localhost',\n\
         'PORT': ''\
