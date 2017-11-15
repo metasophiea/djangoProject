@@ -3,6 +3,7 @@
 # Intro Code
 echo "Update Started : " $(date)
 
+git --git-dir /djangoProject/.git reset --hard
 if [[ $(git --git-dir /djangoProject/.git pull) == "Already up-to-date." ]]
 then
         echo "No updates to be performed"
