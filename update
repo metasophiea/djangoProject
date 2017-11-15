@@ -4,16 +4,16 @@
 echo "Update Started : " $(date)
 
 git --git-dir /djangoProject/.git reset --hard -q
-if [[ $(git --git-dir /djangoProject/.git pull) == "Already up-to-date." ]]
+if [[ $(git --git-dir /djangoProject/.git pull -q) == "Already up-to-date." ]]
 then
         echo "No updates to be performed"
 else
         echo "There's updates it seems"
 
-        # perform load of website content code
+        echo "Loading new content code into website directory"
         # - coming soon -
 
-        # restart apache
+        echo "Restarting Apache"
         /etc/init.d/apache2 restart
 fi
 
