@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo; echo -------- Installing Additional Tools --------; echo;
-apt update 
 apt -y install openssh-server net-tools expect # ssh, ifconfig (and friends), expect (for scripted interaction)
 /etc/init.d/ssh start
 
