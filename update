@@ -3,35 +3,18 @@
 # Intro Code
 echo "Update Started : " $(date)
 
-git --git-dir /djangoProject/.git reset --hard
+git --git-dir /djangoProject/.git reset --hard -q
 if [[ $(git --git-dir /djangoProject/.git pull) == "Already up-to-date." ]]
 then
         echo "No updates to be performed"
 else
         echo "There's updates it seems"
+
+        # perform load of website content code
+        # - coming soon -
+
+        # restart apache
+        /etc/init.d/apache2 restart
 fi
 
 echo ""
-
-# # gather local and remote commit IDs
-# localLatest=$(git --git-dir /djangoProject/.git log -1 --format=%H)
-# remoteLatest=$(git --git-dir /djangoProject/.git diff-tree origin/master --pretty=%H | head -n1)
-# echo "Local Commit ID: " $localLatest " | Remote Commit ID: " $remoteLatest
-
-# if [ $localLatest == $remoteLatest ]
-# then
-#         echo "No updates to be performed"
-#         echo ""
-# else
-#         echo "There's updates to do it seems"
-
-#         # get new code
-#         git --git-dir /djangoProject/.git pull
-#         #git --git-dir /djangoProject/.git reset --hard
-
-#         # perform load of website content code
-#         # - coming soon -
-
-#         # restart apache
-#         /etc/init.d/apache2 restart
-# fi
