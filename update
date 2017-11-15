@@ -8,7 +8,6 @@ if [[ $(git --git-dir /djangoProject/.git pull) == "Already up-to-date." ]]
 then
         echo "No updates to be performed"
 else
-        echo ""
         echo "There's updates it seems"
 
         echo "Loading new content code into website directory"
@@ -18,5 +17,4 @@ else
         /etc/init.d/apache2 restart
 fi
 
-echo ""
 echo ""
