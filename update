@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# get commit id
+# get local commit id
 # git --git-dir /djangoProject/.git log -1 --format=%H
