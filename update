@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Intro Code
+echo "Update Started : " $(date)
+
 # gather local and remote commit IDs
 localLatest=$(git --git-dir /djangoProject/.git log -1 --format=%H)
 remoteLatest=$(git --git-dir /djangoProject/.git diff-tree origin/master --pretty=%H | head -n1)
@@ -8,9 +11,10 @@ echo "Local Commit ID: " $localLatest " | Remote Commit ID: " $remoteLatest
 if [ $localLatest == $remoteLatest ]
 then
         echo "No updates to be performed"
+        echo ""
 else
         echo "There's updates to do it seems"
-        
+
         # get new code
         git --git-dir /djangoProject/.git pull
 
