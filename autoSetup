@@ -4,6 +4,26 @@ echo; echo -------- Installing Additional Tools --------; echo;
 apt -y install openssh-server net-tools expect # ssh, ifconfig (and friends), expect (for scripted interaction)
 /etc/init.d/ssh start
 
+echo; echo -------- Installing Apache and Mod_WSGI --------; echo;
+apt -y install apache2 libapache2-mod-wsgi-py3
+# setup apache to use wsgi and connect to django
+sed -i.bak '2i\
+        Alias /static /website/static\
+        <Directory /website/static>\
+                Require all granted\
+        </Directory>\
+\
+        <Directory /website/website>\
+                <Files wsgi.py>\
+                        Require all granted\
+                </Files>\
+        </Directory>\
+\
+        WSGIDaemonProcess website python-path=/website python-home=/website\
+        WSGIProcessGroup website\
+        WSGIScriptAlias / /website/website/wsgi.py\
+' /etc/apache2/sites-available/000-default.conf
+
 echo; echo -------- Installing Python and Pip --------; echo;
 apt -y install python3 python3-pip libmysqlclient-dev # python, pip, libmysqlclient-dev is necessary to get the pip install of mysqlclient to work
 pip3 install --upgrade pip
@@ -47,6 +67,8 @@ echo 'STATIC_ROOT = os.path.join(BASE_DIR, "static/")' >> website/website/settin
 python3 website/manage.py makemigrations
 # tell django to set itself up in the database
 python3 website/manage.py migrate
+# tell django to collect all of the static content into the directory location we configured
+python3 website/manage.py collectstatic
 # create the superuser 'root'
 /usr/bin/expect << END
         spawn python3 website/manage.py createsuperuser
@@ -61,5 +83,8 @@ python3 website/manage.py migrate
         expect "Superuser created successfully."
 END
 
-echo; echo -------- Starting Django Server --------; echo;
-python3 website/manage.py runserver 0.0.0.0:8080
+# echo; echo -------- Starting Django Server --------; echo;
+# python3 website/manage.py runserver 0.0.0.0:8080
+
+echo; echo -------- Starting Apache Server --------; echo;
+/etc/init.d/apache2 start
