@@ -95,7 +95,7 @@ END
 echo; echo -------- Setting Up Cron Updater --------; echo;
 crontab -r
 crontab << END
-21 4 * * * cd djangoProject/; ./update; cd /; >> /websiteUpdateLog
+21 4 * * * cd /djangoProject; ./update; cd /; >> /websiteUpdateLog
 END # every-day at 4:21am
 /etc/init.d/cron start
 
