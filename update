@@ -17,6 +17,7 @@ else
 
         # get new code
         git --git-dir /djangoProject/.git pull
+        #git --git-dir /djangoProject/.git reset --hard
 
         # perform load of website content code
         # - coming soon -
