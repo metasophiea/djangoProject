@@ -3,7 +3,14 @@
 # Intro Code
 echo "Update Started : " $(date)
 
-git pull
+if [[ $(git pull) == "Already up-to-date." ]]
+then
+        echo "No updates to be performed"
+else
+        echo "There's updates it seems"
+fi
+
+echo ""
 
 # # gather local and remote commit IDs
 # localLatest=$(git --git-dir /djangoProject/.git log -1 --format=%H)
