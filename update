@@ -7,8 +7,6 @@ if [[ $(git --git-dir /djangoProject/.git pull) == "Already up-to-date." ]]
 then
         echo "No updates to be performed"
 else
-        echo "There's updates it seems"
-        
         echo "Loading new content code into website directory"
         # - coming soon -
 
