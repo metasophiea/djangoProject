@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Intro Code
 echo "Update Started : " $(date)
 
 git --git-dir /djangoProject/.git reset --hard -q
