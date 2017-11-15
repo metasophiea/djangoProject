@@ -2,7 +2,6 @@
 
 echo "Update Started : " $(date)
 
-git reset --hard -q
 if [[ $(git pull) == "Already up-to-date." ]]
 then
         echo "No updates to be performed"
