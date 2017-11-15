@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo; echo -------- Installing Additional Tools --------; echo;
-apt -y install openssh-server nano net-tools expect # ssh, nano, ifconfig (and friends), expect (for scripted interaction)
+apt -y install openssh-server nano cron net-tools expect # ssh, nano, cron, ifconfig (and friends), expect (for scripted interaction)
 /etc/init.d/ssh start
 
 echo; echo -------- Installing Apache and Mod_WSGI --------; echo;
@@ -91,6 +91,18 @@ python3 website/manage.py collectstatic
         send "woodensword\r"
         expect "Superuser created successfully."
 END
+
+echo; echo -------- Setting Up Cron Updater --------; echo;
+crontab -r
+crontab << END
+21 4 * * * ./djangoProject/update >> /websiteUpdateLog
+END
+/etc/init.d/cron start
+
+echo; echo -------- Loading Website Content --------; echo;
+# perform load of website content code
+# - coming soon -
+
 
 # echo; echo -------- Starting Django Server --------; echo;
 # python3 website/manage.py runserver 0.0.0.0:8080
