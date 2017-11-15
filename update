@@ -3,7 +3,7 @@
 # Intro Code
 echo "Update Started : " $(date)
 
-if [[ $(git pull) == "Already up-to-date." ]]
+if [[ $(git --git-dir /djangoProject/.git pull) == "Already up-to-date." ]]
 then
         echo "No updates to be performed"
 else
