@@ -60,7 +60,16 @@ django-admin startproject website
 # add ip address to allowed hosts (attempts to find this automatically)
 sed -i -e "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \['$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')'\]/g" website/website/settings.py
 # replace the Django database settings to use the mysql database set up earlier
-sed -i -e  "/'ENGINE': 'django.db.backends.sqlite3',/,/'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),/{/'ENGINE': 'django.db.backends.sqlite3',/ s/.*/\t'ENGINE': 'django.db.backends.mysql',\n\t'NAME': 'project',\n\t'USER': 'app',\n\t'PASSWORD': 'password',\n\t'HOST': 'localhost',\n\t'PORT': '',/; t; d}" website/website/settings.py
+sed -i -e  "/\
+        'ENGINE': 'django.db.backends.sqlite3',/,/\
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),/\
+{/'ENGINE': 'django.db.backends.sqlite3',/ s/.*/\
+        'ENGINE': 'django.db.backends.mysql',\n\
+        'NAME': 'project',\n\t'USER': 'app',\n\
+        'PASSWORD': 'password',\n\
+        'HOST': 'localhost',\n\
+        'PORT': ''\
+/; t; d}" website/website/settings.py
 # static files directory setup
 echo 'STATIC_ROOT = os.path.join(BASE_DIR, "static/")' >> website/website/settings.py
 # run the makemigrations function in django (probably useless)
