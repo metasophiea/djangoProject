@@ -97,7 +97,7 @@ crontab -r
 crontab << END
 21 4 * * * cd /djangoProject; ./update >> /websiteUpdateLog; cd /;
 END
-echo Cron update task entered (every-day at 4:21am)
+echo "Cron update task entered (every-day at 4:21am)"
 /etc/init.d/cron start
 
 echo; echo -------- Loading Website Content --------; echo;
