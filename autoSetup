@@ -65,7 +65,8 @@ sed -i -e  "/\
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),/\
 {/'ENGINE': 'django.db.backends.sqlite3',/ s/.*/\
         'ENGINE': 'django.db.backends.mysql',\n\
-        'NAME': 'website',\n\t'USER': 'app',\n\
+        'NAME': 'website',\n\
+        'USER': 'app',\n\
         'PASSWORD': 'password',\n\
         'HOST': 'localhost',\n\
         'PORT': ''\
