@@ -38,6 +38,7 @@ admin.py	../siteCodeToBeImported/continuousVerse/admin.py	1;"	kind:file	line:1
 application	../siteCodeToBeImported/metasophiea/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 apps.py	../siteCodeToBeImported/continuousVerse/apps.py	1;"	kind:file	line:1
 author	../siteCodeToBeImported/continuousVerse/models.py	/^    author = django.db.models.CharField(max_length=100)$/;"	kind:variable	line:7
+authorId	../siteCodeToBeImported/continuousVerse/models.py	/^    authorId = models.ForeignKey(django.conf.settings.AUTH_USER_MODEL)$/;"	kind:variable	line:8
 continuousVerse	../siteCodeToBeImported/metasophiea/urls.py	/^import continuousVerse$/;"	kind:namespace	line:2
 continuousVerse	../siteCodeToBeImported/metasophiea/urls.py	/^import continuousVerse.views$/;"	kind:namespace	line:3
 continuousVerseConfig	../siteCodeToBeImported/continuousVerse/apps.py	/^class continuousVerseConfig(django.apps.AppConfig):$/;"	kind:class	line:3
