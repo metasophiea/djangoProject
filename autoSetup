@@ -62,13 +62,13 @@ django-admin startproject website
 cp -r /djangoProject/siteCode/* /website
 
 # run the makemigrations function in django (probably useless)
-python3 website/manage.py makemigrations
+python3 /website/manage.py makemigrations
 # run the makemigrations function in relation to the 'newTwitter' app
 python3 /website/manage.py makemigrations newTwitter
 # tell django to set itself up in the database
-python3 website/manage.py migrate
+python3 /website/manage.py migrate
 # tell django to collect all of the static content into the directory location we configured
-python3 website/manage.py collectstatic
+python3 /website/manage.py collectstatic
 
 # add ip address to allowed hosts (attempts to find this automatically)
 sed -i -e "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \['$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')'\]/g" website/website/settings.py
