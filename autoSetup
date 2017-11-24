@@ -95,7 +95,7 @@ END
 # /etc/init.d/cron start
 
 # echo; echo -------- Starting Django Server --------; echo;
-# python3 website/manage.py runserver 0.0.0.0:8080
+# python3 /website/manage.py runserver 0.0.0.0:8080
 
 echo; echo -------- Starting Apache Server --------; echo;
 /etc/init.d/apache2 start
