@@ -25,15 +25,15 @@ sed -i.bak '2i\
 ' /etc/apache2/sites-available/000-default.conf
 
 echo; echo -------- Installing Python and Pip --------; echo;
-apt -y install python3 python3-pip # python, pip, 
+apt -y install python3 python3-pip # python, pip
 pip3 install --upgrade pip
-
+pip3 install psycopg2 # database connectivity
 
 echo; echo -------- Installing PostgreSQL --------; echo;
 apt-get install -y libpq-dev postgresql postgresql-contrib
 /etc/init.d/postgresql start
 
-echo; echo -------- Setting up a database and user in MySQL --------; echo;
+echo; echo -------- Setting up a database and user in PostgreSQL --------; echo;
 sudo -u postgres sh -c "\
     /usr/bin/expect << END
         spawn psql
@@ -50,10 +50,10 @@ sudo -u postgres sh -c "\
         expect \"postgres=# \"
         send \"grant all privileges on database website to app;\r\"
         expect \"postgres=# \"
-        send \"\q\"
+        send \"\\q\r\"
 END\
-    echo ""\
 "
+echo ""
 
 echo; echo -------- Installing Django --------; echo;
 pip3 install django
