@@ -25,35 +25,32 @@ sed -i.bak '2i\
 ' /etc/apache2/sites-available/000-default.conf
 
 echo; echo -------- Installing Python and Pip --------; echo;
-apt -y install python3 python3-pip # python, pip
+apt -y install python3 python3-pip libmysqlclient-dev # python, pip, libmysqlclient-dev (necessary to get the pip install of mysqlclient to work)
 pip3 install --upgrade pip
-pip3 install psycopg2 # database connectivity
+pip3 install mysqlclient
 
-echo; echo -------- Installing PostgreSQL --------; echo;
-apt-get install -y libpq-dev postgresql postgresql-contrib
-/etc/init.d/postgresql start
+echo; echo -------- Installing MySQL --------; echo;
+# setting up password entry setup, for when mysql is installed
+echo "mysql-server mysql-server/root_password password woodensword" | debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password woodensword" | debconf-set-selections
+apt -y install mysql-server
+/etc/init.d/mysql start
 
-echo; echo -------- Setting up a database and user in PostgreSQL --------; echo;
-sudo -u postgres sh -c "\
-    /usr/bin/expect << END
-        spawn psql
-        expect \"postgres=# \"
-        send \"create database website;\r\"
-        expect \"postgres=# \"
-        send \"create user app with password 'password';\r\"     
-        expect \"postgres=# \"
-        send \"alter role app set client_encoding to 'utf8';\r\"
-        expect \"postgres=# \"
-        send \"alter role app set default_transaction_isolation to 'read committed';\r\"
-        expect \"postgres=# \"
-        send \"alter role app set timezone to 'UTC';\r\"
-        expect \"postgres=# \"
-        send \"grant all privileges on database website to app;\r\"
-        expect \"postgres=# \"
-        send \"\\q\r\"
-END\
-"
-echo ""
+echo; echo -------- Setting up a database and user in MySQL --------; echo;
+# using 'expect', we interact with mysql to create a database and user for django to use
+/usr/bin/expect << END
+        spawn mysql -u root -p
+        expect "Enter password: "
+        send "woodensword\r"
+        expect "mysql> "
+        send "create database website;\r"
+        expect "mysql> "
+        send "create user 'app'@'localhost' identified by 'password';\r"
+        expect "mysql> "
+        send "grant all privileges on website.* to 'app'@'localhost';\r"
+        expect "mysql> "
+        send "exit\r"
+END
 
 echo; echo -------- Installing Django --------; echo;
 pip3 install django
@@ -97,8 +94,8 @@ END
 # echo "Cron update task entered (every-day at 4:21am)"
 # /etc/init.d/cron start
 
-echo; echo -------- Starting Django Server --------; echo;
-python3 /website/manage.py runserver 0.0.0.0:8080
+# echo; echo -------- Starting Django Server --------; echo;
+# python3 /website/manage.py runserver 0.0.0.0:8080
 
-# echo; echo -------- Starting Apache Server --------; echo;
-# /etc/init.d/apache2 start
+echo; echo -------- Starting Apache Server --------; echo;
+/etc/init.d/apache2 start
