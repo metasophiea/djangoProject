@@ -1,4 +1,0 @@
-- import all code
-python3 manage.py makemigrations continuousVerse
-python3 manage.py migrate
-- restart server
