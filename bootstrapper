@@ -1,6 +1,7 @@
 #!/bin/bash
 
 apt update 
+apt-get update
 apt -y install git
 git clone https://github.com/metasophiea/djangoProject
 /djangoProject/autoSetup
