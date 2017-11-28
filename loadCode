@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -r /djangoProject/siteCode/* /website
+cp -r /djangoProject/$1/* /website
 python3 /website/manage.py makemigrations
 python3 /website/manage.py makemigrations newTwitter
 python3 manage.py migrate
