@@ -4,79 +4,60 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ALLOWED_HOSTS	../siteCode/website/settings.py	/^ALLOWED_HOSTS = ['192.168.122.15']$/;"	kind:variable	line:16
-ALLOWED_HOSTS	../siteCode/website/settings2.py	/^ALLOWED_HOSTS = ['192.168.122.15']$/;"	kind:variable	line:12
-AUTH_PASSWORD_VALIDATORS	../siteCode/website/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:80
-AUTH_PASSWORD_VALIDATORS	../siteCode/website/settings2.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:68
-AppConfig	../siteCode/newTwitter/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
-BASE_DIR	../siteCode/website/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:4
-BASE_DIR	../siteCode/website/settings2.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:4
-DATABASES	../siteCode/website/settings.py	/^DATABASES = {$/;"	kind:variable	line:65
-DATABASES	../siteCode/website/settings2.py	/^DATABASES = {$/;"	kind:variable	line:56
-DEBUG	../siteCode/website/settings.py	/^DEBUG = True$/;"	kind:variable	line:14
-DEBUG	../siteCode/website/settings2.py	/^DEBUG = True$/;"	kind:variable	line:10
-INSTALLED_APPS	../siteCode/website/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:21
-INSTALLED_APPS	../siteCode/website/settings2.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:15
-LANGUAGE_CODE	../siteCode/website/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:99
-LANGUAGE_CODE	../siteCode/website/settings2.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:76
-MIDDLEWARE	../siteCode/website/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:31
-MIDDLEWARE	../siteCode/website/settings2.py	/^MIDDLEWARE = [$/;"	kind:variable	line:25
-ROOT_URLCONF	../siteCode/website/settings.py	/^ROOT_URLCONF = 'website.urls'$/;"	kind:variable	line:41
-ROOT_URLCONF	../siteCode/website/settings2.py	/^ROOT_URLCONF = 'website.urls'$/;"	kind:variable	line:35
-STATIC_ROOT	../siteCode/website/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "static\/")/;"	kind:variable	line:114
-STATIC_ROOT	../siteCode/website/settings2.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "static\/")/;"	kind:variable	line:84
-STATIC_URL	../siteCode/website/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:113
-STATIC_URL	../siteCode/website/settings2.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:83
-TEMPLATES	../siteCode/website/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:43
-TEMPLATES	../siteCode/website/settings2.py	/^TEMPLATES = [$/;"	kind:variable	line:37
-TIME_ZONE	../siteCode/website/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:101
-TIME_ZONE	../siteCode/website/settings2.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:77
-USE_I18N	../siteCode/website/settings.py	/^USE_I18N = True$/;"	kind:variable	line:103
-USE_I18N	../siteCode/website/settings2.py	/^USE_I18N = True$/;"	kind:variable	line:78
-USE_L10N	../siteCode/website/settings.py	/^USE_L10N = True$/;"	kind:variable	line:105
-USE_L10N	../siteCode/website/settings2.py	/^USE_L10N = True$/;"	kind:variable	line:79
-USE_TZ	../siteCode/website/settings.py	/^USE_TZ = True$/;"	kind:variable	line:107
-USE_TZ	../siteCode/website/settings2.py	/^USE_TZ = True$/;"	kind:variable	line:80
-WSGI_APPLICATION	../siteCode/website/settings.py	/^WSGI_APPLICATION = 'website.wsgi.application'$/;"	kind:variable	line:59
-WSGI_APPLICATION	../siteCode/website/settings2.py	/^WSGI_APPLICATION = 'website.wsgi.application'$/;"	kind:variable	line:53
-__init__.py	../siteCode/website/__init__.py	1;"	kind:file	line:1
-__str__	../siteCode/newTwitter/models.py	/^	def __str__(self):$/;"	kind:member	line:15
-admin	../siteCode/newTwitter/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
-admin	../siteCode/website/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:2
-admin.py	../siteCode/newTwitter/admin.py	1;"	kind:file	line:1
-application	../siteCode/website/wsgi.py	/^application = get_wsgi_application()/;"	kind:variable	line:7
-apps.py	../siteCode/newTwitter/apps.py	1;"	kind:file	line:1
-author	../siteCode/newTwitter/models.py	/^	author = models.CharField(max_length=100)$/;"	kind:variable	line:7
-authorId	../siteCode/newTwitter/models.py	/^	authorId = models.ForeignKey(settings.AUTH_USER_MODEL)$/;"	kind:variable	line:8
-django	../siteCode/newTwitter/views.py	/^import django, json$/;"	kind:namespace	line:1
-downVotes	../siteCode/newTwitter/models.py	/^	downVotes = models.IntegerField(default=0)$/;"	kind:variable	line:13
-getTweets	../siteCode/newTwitter/views.py	/^def getTweets(request):$/;"	kind:function	line:13
-get_wsgi_application	../siteCode/website/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:3
-index	../siteCode/newTwitter/views.py	/^def index(request):$/;"	kind:function	line:6
-json	../siteCode/newTwitter/views.py	/^import django, json$/;"	kind:namespace	line:1
-list_display	../siteCode/newTwitter/admin.py	/^	list_display = ['tweetId','author','text','upVotes','downVotes']$/;"	kind:variable	line:5
-login	../siteCode/newTwitter/views.py	/^def login(request):$/;"	kind:function	line:32
-login_required	../siteCode/newTwitter/views.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:3
-logout	../siteCode/newTwitter/views.py	/^def logout(request):$/;"	kind:function	line:53
-models	../siteCode/newTwitter/models.py	/^from django.db import models$/;"	kind:namespace	line:1
-models.py	../siteCode/newTwitter/models.py	1;"	kind:file	line:1
-name	../siteCode/newTwitter/apps.py	/^    name = 'newTwitter'/;"	kind:variable	line:5
-newTwitterConfig	../siteCode/newTwitter/apps.py	/^class newTwitterConfig(AppConfig):$/;"	kind:class	line:4
-os	../siteCode/website/settings.py	/^import os$/;"	kind:namespace	line:1
-os	../siteCode/website/settings2.py	/^import os$/;"	kind:namespace	line:1
-os	../siteCode/website/wsgi.py	/^import os$/;"	kind:namespace	line:1
-render	../siteCode/newTwitter/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:2
-settings	../siteCode/newTwitter/models.py	/^from django.conf import settings$/;"	kind:namespace	line:2
-settings.py	../siteCode/website/settings.py	1;"	kind:file	line:1
-settings2.py	../siteCode/website/settings2.py	1;"	kind:file	line:1
-text	../siteCode/newTwitter/models.py	/^	text = models.CharField(max_length=140)$/;"	kind:variable	line:10
-tweet	../siteCode/newTwitter/models.py	/^class tweet(models.Model):$/;"	kind:class	line:4
-tweetId	../siteCode/newTwitter/models.py	/^	tweetId = models.AutoField(primary_key=True)$/;"	kind:variable	line:5
-tweet_admin	../siteCode/newTwitter/admin.py	/^class tweet_admin(admin.ModelAdmin):$/;"	kind:class	line:4
-upVotes	../siteCode/newTwitter/models.py	/^	upVotes = models.IntegerField(default=0)$/;"	kind:variable	line:12
-url	../siteCode/website/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
-urlpatterns	../siteCode/website/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
-urls.py	../siteCode/website/urls.py	1;"	kind:file	line:1
-views	../siteCode/website/urls.py	/^from newTwitter import views$/;"	kind:namespace	line:3
-views.py	../siteCode/newTwitter/views.py	1;"	kind:file	line:1
-wsgi.py	../siteCode/website/wsgi.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../basicExampleSite/website/settings.py	/^ALLOWED_HOSTS = ['192.168.122.15']$/;"	kind:variable	line:12
+AUTH_PASSWORD_VALIDATORS	../basicExampleSite/website/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:68
+AppConfig	../basicExampleSite/newTwitter/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+BASE_DIR	../basicExampleSite/website/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:4
+DATABASES	../basicExampleSite/website/settings.py	/^DATABASES = {$/;"	kind:variable	line:56
+DEBUG	../basicExampleSite/website/settings.py	/^DEBUG = True$/;"	kind:variable	line:10
+INSTALLED_APPS	../basicExampleSite/website/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:15
+LANGUAGE_CODE	../basicExampleSite/website/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:76
+MIDDLEWARE	../basicExampleSite/website/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:25
+ROOT_URLCONF	../basicExampleSite/website/settings.py	/^ROOT_URLCONF = 'website.urls'$/;"	kind:variable	line:35
+STATIC_ROOT	../basicExampleSite/website/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "static\/")/;"	kind:variable	line:84
+STATIC_URL	../basicExampleSite/website/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:83
+TEMPLATES	../basicExampleSite/website/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:37
+TIME_ZONE	../basicExampleSite/website/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:77
+USE_I18N	../basicExampleSite/website/settings.py	/^USE_I18N = True$/;"	kind:variable	line:78
+USE_L10N	../basicExampleSite/website/settings.py	/^USE_L10N = True$/;"	kind:variable	line:79
+USE_TZ	../basicExampleSite/website/settings.py	/^USE_TZ = True$/;"	kind:variable	line:80
+WSGI_APPLICATION	../basicExampleSite/website/settings.py	/^WSGI_APPLICATION = 'website.wsgi.application'$/;"	kind:variable	line:53
+__init__.py	../basicExampleSite/website/__init__.py	1;"	kind:file	line:1
+__str__	../basicExampleSite/newTwitter/models.py	/^	def __str__(self):$/;"	kind:member	line:15
+admin	../basicExampleSite/newTwitter/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	../basicExampleSite/website/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:2
+admin.py	../basicExampleSite/newTwitter/admin.py	1;"	kind:file	line:1
+application	../basicExampleSite/website/wsgi.py	/^application = get_wsgi_application()/;"	kind:variable	line:7
+apps.py	../basicExampleSite/newTwitter/apps.py	1;"	kind:file	line:1
+author	../basicExampleSite/newTwitter/models.py	/^	author = models.CharField(max_length=100)$/;"	kind:variable	line:7
+authorId	../basicExampleSite/newTwitter/models.py	/^	authorId = models.ForeignKey(settings.AUTH_USER_MODEL)$/;"	kind:variable	line:8
+django	../basicExampleSite/newTwitter/views.py	/^import django, json$/;"	kind:namespace	line:1
+downVotes	../basicExampleSite/newTwitter/models.py	/^	downVotes = models.IntegerField(default=0)$/;"	kind:variable	line:13
+getTweets	../basicExampleSite/newTwitter/views.py	/^def getTweets(request):$/;"	kind:function	line:13
+get_wsgi_application	../basicExampleSite/website/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:3
+index	../basicExampleSite/newTwitter/views.py	/^def index(request):$/;"	kind:function	line:6
+json	../basicExampleSite/newTwitter/views.py	/^import django, json$/;"	kind:namespace	line:1
+list_display	../basicExampleSite/newTwitter/admin.py	/^	list_display = ['tweetId','author','text','upVotes','downVotes']$/;"	kind:variable	line:5
+login	../basicExampleSite/newTwitter/views.py	/^def login(request):$/;"	kind:function	line:32
+login_required	../basicExampleSite/newTwitter/views.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:3
+logout	../basicExampleSite/newTwitter/views.py	/^def logout(request):$/;"	kind:function	line:53
+models	../basicExampleSite/newTwitter/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models.py	../basicExampleSite/newTwitter/models.py	1;"	kind:file	line:1
+name	../basicExampleSite/newTwitter/apps.py	/^    name = 'newTwitter'/;"	kind:variable	line:5
+newTwitterConfig	../basicExampleSite/newTwitter/apps.py	/^class newTwitterConfig(AppConfig):$/;"	kind:class	line:4
+os	../basicExampleSite/website/settings.py	/^import os$/;"	kind:namespace	line:1
+os	../basicExampleSite/website/wsgi.py	/^import os$/;"	kind:namespace	line:1
+render	../basicExampleSite/newTwitter/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:2
+settings	../basicExampleSite/newTwitter/models.py	/^from django.conf import settings$/;"	kind:namespace	line:2
+settings.py	../basicExampleSite/website/settings.py	1;"	kind:file	line:1
+text	../basicExampleSite/newTwitter/models.py	/^	text = models.CharField(max_length=140)$/;"	kind:variable	line:10
+tweet	../basicExampleSite/newTwitter/models.py	/^class tweet(models.Model):$/;"	kind:class	line:4
+tweetId	../basicExampleSite/newTwitter/models.py	/^	tweetId = models.AutoField(primary_key=True)$/;"	kind:variable	line:5
+tweet_admin	../basicExampleSite/newTwitter/admin.py	/^class tweet_admin(admin.ModelAdmin):$/;"	kind:class	line:4
+upVotes	../basicExampleSite/newTwitter/models.py	/^	upVotes = models.IntegerField(default=0)$/;"	kind:variable	line:12
+url	../basicExampleSite/website/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+urlpatterns	../basicExampleSite/website/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
+urls.py	../basicExampleSite/website/urls.py	1;"	kind:file	line:1
+views	../basicExampleSite/website/urls.py	/^from newTwitter import views$/;"	kind:namespace	line:3
+views.py	../basicExampleSite/newTwitter/views.py	1;"	kind:file	line:1
+wsgi.py	../basicExampleSite/website/wsgi.py	1;"	kind:file	line:1
