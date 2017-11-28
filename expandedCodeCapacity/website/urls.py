@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from newTwitter import views
 
@@ -10,11 +10,7 @@ urlpatterns = [
 	url(r'^login/', views.auth.login),
 	url(r'^logout/', views.auth.logout),
 
-	url(r'^data/', newCode.data.index),
-	url(r'^info/', newCode.info.index),
-	url(r'^codeLib/', newCode.codeLib.func.index),
-
-	url(r'^moreData/', views.data.index),
+	url(r'^newCode/', include('newCode.urls')),
 
 	url(r'^tweetData/', views.data.getTweets),
 	url(r'^$', views.main.index)

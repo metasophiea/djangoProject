@@ -1,9 +1,6 @@
 import django, json
 from .. import models
 
-def index(request):
-    return django.http.HttpResponse( "Hello from data" )
-
 def getTweets(request):
 	outputArray = []
 	defaultObject = {
