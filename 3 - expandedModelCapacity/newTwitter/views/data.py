@@ -10,7 +10,7 @@ def getTweets(request):
 		'downVotes':0
 	}
 
-	for item in models.tweet.objects.all():
+	for item in models.tweet.tweet.objects.all():
 		tempObject = dict(defaultObject)
 		tempObject['authorName'] = item.author
 		tempObject['text'] = item.text
