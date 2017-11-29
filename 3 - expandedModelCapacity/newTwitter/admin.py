@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import *
+from . import models
 
 class tweet_admin(admin.ModelAdmin):
 	list_display = ['tweetId','author','text','upVotes','downVotes']
 
-admin.site.register(tweet, tweet_admin)
+admin.site.register(models.tweet.tweet, tweet_admin)
