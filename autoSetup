@@ -62,7 +62,7 @@ echo; echo -------- Setting up a Django project and loading website code -------
 django-admin startproject website
 
 # copy site code into website folder
-cp -r /djangoProject/siteCode/* /website
+cp -r /djangoProject/"1 - basicExmapleSite"/* /website
 
 # run the makemigrations function in django (probably useless)
 python3 /website/manage.py makemigrations
