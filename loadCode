@@ -5,9 +5,21 @@ if [ $# == 0 ]; then
 	exit
 fi
 
+echo "- Loading files"
 rm -r /website/*
 cp -r /djangoProject/"$*"/* /website
+echo ""
+
+echo "- Attempting to make all migrations"
 python3 /website/manage.py makemigrations
-python3 /website/manage.py makemigrations newTwitter
+echo ""
+
+echo "- Migrating"
 python3 /website/manage.py migrate
+echo ""
+
+echo "- Collecting static files"
 python3 /website/manage.py collectstatic
+echo ""
+
+echo "Done"
