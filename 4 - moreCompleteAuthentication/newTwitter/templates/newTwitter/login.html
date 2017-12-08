@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>login - metasophiea</title>
+	<meta charset="utf-8"></meta>
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<script></script>
+	<style></style>
+</head>
+
+<body>
+
+	<section class='card' style='text-align:center;'>
+		<h1 class='mainTitle'>Login</h1>
+		<form method='POST' action='/login/' name='loginForm'>
+			{% csrf_token %}
+			<p class='formInputText'>username: <input id='formInput_username' type='text' name='username'/></p>
+			<p class='formInputText'>password: <input id='formInput_password' type='password' name='password'/></p>
+			<input class='button' type='submit' value='login'/>
+		</form>
+		<p id='errorMessage' class='errorMessage'></p>
+	</section>
+
+</body>
+</html>
