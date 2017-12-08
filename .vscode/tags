@@ -6,82 +6,62 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 0001_initial.py	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	1;"	kind:file	line:1
 0001_initial.py	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	1;"	kind:file	line:1
-0001_initial.py	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	1;"	kind:file	line:1
 ALLOWED_HOSTS	../1 - basicExampleSite/website/settings.py	/^ALLOWED_HOSTS = ['192.168.122.15']$/;"	kind:variable	line:12
 ALLOWED_HOSTS	../2 - expandedCodeCapacity/website/settings.py	/^ALLOWED_HOSTS = ['192.168.122.15']$/;"	kind:variable	line:12
 ALLOWED_HOSTS	../3 - expandedModelCapacity/website/settings.py	/^ALLOWED_HOSTS = ['192.168.122.15']$/;"	kind:variable	line:12
-ALLOWED_HOSTS	../4 - outgoingEmailCapabilities/website/settings.py	/^ALLOWED_HOSTS = ['192.168.122.33']$/;"	kind:variable	line:12
 AUTH_PASSWORD_VALIDATORS	../1 - basicExampleSite/website/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:68
 AUTH_PASSWORD_VALIDATORS	../2 - expandedCodeCapacity/website/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:68
 AUTH_PASSWORD_VALIDATORS	../3 - expandedModelCapacity/website/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:68
-AUTH_PASSWORD_VALIDATORS	../4 - outgoingEmailCapabilities/website/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:68
 AppConfig	../1 - basicExampleSite/newTwitter/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
 AppConfig	../2 - expandedCodeCapacity/newTwitter/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
 AppConfig	../3 - expandedModelCapacity/newTwitter/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
-AppConfig	../4 - outgoingEmailCapabilities/newTwitter/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
 BASE_DIR	../1 - basicExampleSite/website/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:4
 BASE_DIR	../2 - expandedCodeCapacity/website/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:4
 BASE_DIR	../3 - expandedModelCapacity/website/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:4
-BASE_DIR	../4 - outgoingEmailCapabilities/website/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:4
 DATABASES	../1 - basicExampleSite/website/settings.py	/^DATABASES = {$/;"	kind:variable	line:56
 DATABASES	../2 - expandedCodeCapacity/website/settings.py	/^DATABASES = {$/;"	kind:variable	line:56
 DATABASES	../3 - expandedModelCapacity/website/settings.py	/^DATABASES = {$/;"	kind:variable	line:56
-DATABASES	../4 - outgoingEmailCapabilities/website/settings.py	/^DATABASES = {$/;"	kind:variable	line:56
 DEBUG	../1 - basicExampleSite/website/settings.py	/^DEBUG = True$/;"	kind:variable	line:10
 DEBUG	../2 - expandedCodeCapacity/website/settings.py	/^DEBUG = True$/;"	kind:variable	line:10
 DEBUG	../3 - expandedModelCapacity/website/settings.py	/^DEBUG = True$/;"	kind:variable	line:10
-DEBUG	../4 - outgoingEmailCapabilities/website/settings.py	/^DEBUG = True$/;"	kind:variable	line:10
 INSTALLED_APPS	../1 - basicExampleSite/website/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:15
 INSTALLED_APPS	../2 - expandedCodeCapacity/website/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:15
 INSTALLED_APPS	../3 - expandedModelCapacity/website/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:15
-INSTALLED_APPS	../4 - outgoingEmailCapabilities/website/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:15
 LANGUAGE_CODE	../1 - basicExampleSite/website/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:76
 LANGUAGE_CODE	../2 - expandedCodeCapacity/website/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:76
 LANGUAGE_CODE	../3 - expandedModelCapacity/website/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:76
-LANGUAGE_CODE	../4 - outgoingEmailCapabilities/website/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:76
 MIDDLEWARE	../1 - basicExampleSite/website/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:25
 MIDDLEWARE	../2 - expandedCodeCapacity/website/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:25
 MIDDLEWARE	../3 - expandedModelCapacity/website/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:25
-MIDDLEWARE	../4 - outgoingEmailCapabilities/website/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:25
 Migration	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:10
 Migration	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:10
-Migration	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:10
 ROOT_URLCONF	../1 - basicExampleSite/website/settings.py	/^ROOT_URLCONF = 'website.urls'$/;"	kind:variable	line:35
 ROOT_URLCONF	../2 - expandedCodeCapacity/website/settings.py	/^ROOT_URLCONF = 'website.urls'$/;"	kind:variable	line:35
 ROOT_URLCONF	../3 - expandedModelCapacity/website/settings.py	/^ROOT_URLCONF = 'website.urls'$/;"	kind:variable	line:35
-ROOT_URLCONF	../4 - outgoingEmailCapabilities/website/settings.py	/^ROOT_URLCONF = 'website.urls'$/;"	kind:variable	line:35
 STATIC_ROOT	../1 - basicExampleSite/website/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "static\/")/;"	kind:variable	line:84
 STATIC_ROOT	../2 - expandedCodeCapacity/website/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "static\/")/;"	kind:variable	line:84
 STATIC_ROOT	../3 - expandedModelCapacity/website/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "static\/")/;"	kind:variable	line:84
-STATIC_ROOT	../4 - outgoingEmailCapabilities/website/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "static\/")/;"	kind:variable	line:84
 STATIC_URL	../1 - basicExampleSite/website/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:83
 STATIC_URL	../2 - expandedCodeCapacity/website/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:83
 STATIC_URL	../3 - expandedModelCapacity/website/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:83
-STATIC_URL	../4 - outgoingEmailCapabilities/website/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:83
 TEMPLATES	../1 - basicExampleSite/website/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:37
 TEMPLATES	../2 - expandedCodeCapacity/website/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:37
 TEMPLATES	../3 - expandedModelCapacity/website/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:37
-TEMPLATES	../4 - outgoingEmailCapabilities/website/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:37
 TIME_ZONE	../1 - basicExampleSite/website/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:77
 TIME_ZONE	../2 - expandedCodeCapacity/website/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:77
 TIME_ZONE	../3 - expandedModelCapacity/website/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:77
-TIME_ZONE	../4 - outgoingEmailCapabilities/website/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:77
 USE_I18N	../1 - basicExampleSite/website/settings.py	/^USE_I18N = True$/;"	kind:variable	line:78
 USE_I18N	../2 - expandedCodeCapacity/website/settings.py	/^USE_I18N = True$/;"	kind:variable	line:78
 USE_I18N	../3 - expandedModelCapacity/website/settings.py	/^USE_I18N = True$/;"	kind:variable	line:78
-USE_I18N	../4 - outgoingEmailCapabilities/website/settings.py	/^USE_I18N = True$/;"	kind:variable	line:78
 USE_L10N	../1 - basicExampleSite/website/settings.py	/^USE_L10N = True$/;"	kind:variable	line:79
 USE_L10N	../2 - expandedCodeCapacity/website/settings.py	/^USE_L10N = True$/;"	kind:variable	line:79
 USE_L10N	../3 - expandedModelCapacity/website/settings.py	/^USE_L10N = True$/;"	kind:variable	line:79
-USE_L10N	../4 - outgoingEmailCapabilities/website/settings.py	/^USE_L10N = True$/;"	kind:variable	line:79
 USE_TZ	../1 - basicExampleSite/website/settings.py	/^USE_TZ = True$/;"	kind:variable	line:80
 USE_TZ	../2 - expandedCodeCapacity/website/settings.py	/^USE_TZ = True$/;"	kind:variable	line:80
 USE_TZ	../3 - expandedModelCapacity/website/settings.py	/^USE_TZ = True$/;"	kind:variable	line:80
-USE_TZ	../4 - outgoingEmailCapabilities/website/settings.py	/^USE_TZ = True$/;"	kind:variable	line:80
 WSGI_APPLICATION	../1 - basicExampleSite/website/settings.py	/^WSGI_APPLICATION = 'website.wsgi.application'$/;"	kind:variable	line:53
 WSGI_APPLICATION	../2 - expandedCodeCapacity/website/settings.py	/^WSGI_APPLICATION = 'website.wsgi.application'$/;"	kind:variable	line:53
 WSGI_APPLICATION	../3 - expandedModelCapacity/website/settings.py	/^WSGI_APPLICATION = 'website.wsgi.application'$/;"	kind:variable	line:53
-WSGI_APPLICATION	../4 - outgoingEmailCapabilities/website/settings.py	/^WSGI_APPLICATION = 'website.wsgi.application'$/;"	kind:variable	line:53
 __init__.py	../1 - basicExampleSite/website/__init__.py	1;"	kind:file	line:1
 __init__.py	../2 - expandedCodeCapacity/newCode/__init__.py	1;"	kind:file	line:1
 __init__.py	../2 - expandedCodeCapacity/newCode/codeLib/__init__.py	1;"	kind:file	line:1
@@ -94,78 +74,53 @@ __init__.py	../3 - expandedModelCapacity/newTwitter/migrations/__init__.py	1;"	k
 __init__.py	../3 - expandedModelCapacity/newTwitter/models/__init__.py	1;"	kind:file	line:1
 __init__.py	../3 - expandedModelCapacity/newTwitter/views/__init__.py	1;"	kind:file	line:1
 __init__.py	../3 - expandedModelCapacity/website/__init__.py	1;"	kind:file	line:1
-__init__.py	../4 - outgoingEmailCapabilities/newCode/__init__.py	1;"	kind:file	line:1
-__init__.py	../4 - outgoingEmailCapabilities/newCode/codeLib/__init__.py	1;"	kind:file	line:1
-__init__.py	../4 - outgoingEmailCapabilities/newTwitter/migrations/__init__.py	1;"	kind:file	line:1
-__init__.py	../4 - outgoingEmailCapabilities/newTwitter/models/__init__.py	1;"	kind:file	line:1
-__init__.py	../4 - outgoingEmailCapabilities/newTwitter/views/__init__.py	1;"	kind:file	line:1
-__init__.py	../4 - outgoingEmailCapabilities/utilityCode/__init__.py	1;"	kind:file	line:1
-__init__.py	../4 - outgoingEmailCapabilities/website/__init__.py	1;"	kind:file	line:1
+__init__.py	../additionals/emailUtilityCode/__init__.py	1;"	kind:file	line:1
 __str__	../1 - basicExampleSite/newTwitter/models.py	/^	def __str__(self):$/;"	kind:member	line:15
 __str__	../2 - expandedCodeCapacity/newTwitter/models.py	/^	def __str__(self):$/;"	kind:member	line:15
 __str__	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        def __str__(self):$/;"	kind:member	line:15
-__str__	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        def __str__(self):$/;"	kind:member	line:15
 admin	../1 - basicExampleSite/newTwitter/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
 admin	../1 - basicExampleSite/website/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:2
 admin	../2 - expandedCodeCapacity/newTwitter/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
 admin	../2 - expandedCodeCapacity/website/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:2
 admin	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^from django.contrib import admin$/;"	kind:namespace	line:25
 admin	../3 - expandedModelCapacity/website/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:2
-admin	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^from django.contrib import admin$/;"	kind:namespace	line:25
-admin	../4 - outgoingEmailCapabilities/website/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:2
 admin.py	../1 - basicExampleSite/newTwitter/admin.py	1;"	kind:file	line:1
 admin.py	../2 - expandedCodeCapacity/newTwitter/admin.py	1;"	kind:file	line:1
 admin.py	../3 - expandedModelCapacity/newTwitter/admin.py	1;"	kind:file	line:1
-admin.py	../4 - outgoingEmailCapabilities/newTwitter/admin.py	1;"	kind:file	line:1
 application	../1 - basicExampleSite/website/wsgi.py	/^application = get_wsgi_application()/;"	kind:variable	line:7
 application	../2 - expandedCodeCapacity/website/wsgi.py	/^application = get_wsgi_application()/;"	kind:variable	line:7
 application	../3 - expandedModelCapacity/website/wsgi.py	/^application = get_wsgi_application()/;"	kind:variable	line:7
-application	../4 - outgoingEmailCapabilities/website/wsgi.py	/^application = get_wsgi_application()/;"	kind:variable	line:7
 apps.py	../1 - basicExampleSite/newTwitter/apps.py	1;"	kind:file	line:1
 apps.py	../2 - expandedCodeCapacity/newTwitter/apps.py	1;"	kind:file	line:1
 apps.py	../3 - expandedModelCapacity/newTwitter/apps.py	1;"	kind:file	line:1
-apps.py	../4 - outgoingEmailCapabilities/newTwitter/apps.py	1;"	kind:file	line:1
 auth	../2 - expandedCodeCapacity/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
 auth	../3 - expandedModelCapacity/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
-auth	../4 - outgoingEmailCapabilities/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
 auth.py	../2 - expandedCodeCapacity/newTwitter/views/auth.py	1;"	kind:file	line:1
 auth.py	../3 - expandedModelCapacity/newTwitter/views/auth.py	1;"	kind:file	line:1
-auth.py	../4 - outgoingEmailCapabilities/newTwitter/views/auth.py	1;"	kind:file	line:1
 author	../1 - basicExampleSite/newTwitter/models.py	/^	author = models.CharField(max_length=100)$/;"	kind:variable	line:7
 author	../2 - expandedCodeCapacity/newTwitter/models.py	/^	author = models.CharField(max_length=100)$/;"	kind:variable	line:7
 author	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        author = models.CharField(max_length=100)$/;"	kind:variable	line:7
-author	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        author = models.CharField(max_length=100)$/;"	kind:variable	line:7
 authorId	../1 - basicExampleSite/newTwitter/models.py	/^	authorId = models.ForeignKey(settings.AUTH_USER_MODEL)$/;"	kind:variable	line:8
 authorId	../2 - expandedCodeCapacity/newTwitter/models.py	/^	authorId = models.ForeignKey(settings.AUTH_USER_MODEL)$/;"	kind:variable	line:8
 authorId	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        authorId = models.ForeignKey(settings.AUTH_USER_MODEL)$/;"	kind:variable	line:8
-authorId	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        authorId = models.ForeignKey(settings.AUTH_USER_MODEL)$/;"	kind:variable	line:8
 codeLib	../2 - expandedCodeCapacity/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
 codeLib	../3 - expandedModelCapacity/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
-codeLib	../4 - outgoingEmailCapabilities/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
 data	../2 - expandedCodeCapacity/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
 data	../2 - expandedCodeCapacity/newCode/urls.py	/^from . import data, info$/;"	kind:namespace	line:3
 data	../2 - expandedCodeCapacity/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
 data	../3 - expandedModelCapacity/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
 data	../3 - expandedModelCapacity/newCode/urls.py	/^from . import data, info$/;"	kind:namespace	line:3
 data	../3 - expandedModelCapacity/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
-data	../4 - outgoingEmailCapabilities/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
-data	../4 - outgoingEmailCapabilities/newCode/urls.py	/^from . import data, info$/;"	kind:namespace	line:3
-data	../4 - outgoingEmailCapabilities/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
 data.py	../2 - expandedCodeCapacity/newCode/data.py	1;"	kind:file	line:1
 data.py	../2 - expandedCodeCapacity/newTwitter/views/data.py	1;"	kind:file	line:1
 data.py	../3 - expandedModelCapacity/newCode/data.py	1;"	kind:file	line:1
 data.py	../3 - expandedModelCapacity/newTwitter/views/data.py	1;"	kind:file	line:1
-data.py	../4 - outgoingEmailCapabilities/newCode/data.py	1;"	kind:file	line:1
-data.py	../4 - outgoingEmailCapabilities/newTwitter/views/data.py	1;"	kind:file	line:1
 db	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
 db	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
-db	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
 deletion	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
 deletion	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
-deletion	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
 dependencies	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:14
 dependencies	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:14
-dependencies	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:14
 django	../1 - basicExampleSite/manage.py	/^            import django$/;"	kind:namespace	line:14
 django	../1 - basicExampleSite/newTwitter/views.py	/^import django, json$/;"	kind:namespace	line:1
 django	../2 - expandedCodeCapacity/manage.py	/^            import django$/;"	kind:namespace	line:14
@@ -184,48 +139,30 @@ django	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^impo
 django	../3 - expandedModelCapacity/newTwitter/views/auth.py	/^import django$/;"	kind:namespace	line:1
 django	../3 - expandedModelCapacity/newTwitter/views/data.py	/^import django, json$/;"	kind:namespace	line:1
 django	../3 - expandedModelCapacity/newTwitter/views/main.py	/^import django$/;"	kind:namespace	line:1
-django	../4 - outgoingEmailCapabilities/manage.py	/^            import django$/;"	kind:namespace	line:14
-django	../4 - outgoingEmailCapabilities/newCode/codeLib/func.py	/^import django$/;"	kind:namespace	line:1
-django	../4 - outgoingEmailCapabilities/newCode/data.py	/^import django$/;"	kind:namespace	line:1
-django	../4 - outgoingEmailCapabilities/newCode/info.py	/^import django$/;"	kind:namespace	line:1
-django	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
-django	../4 - outgoingEmailCapabilities/newTwitter/views/auth.py	/^import django$/;"	kind:namespace	line:1
-django	../4 - outgoingEmailCapabilities/newTwitter/views/data.py	/^import django, json$/;"	kind:namespace	line:1
-django	../4 - outgoingEmailCapabilities/newTwitter/views/main.py	/^import django$/;"	kind:namespace	line:1
 downVotes	../1 - basicExampleSite/newTwitter/models.py	/^	downVotes = models.IntegerField(default=0)$/;"	kind:variable	line:13
 downVotes	../2 - expandedCodeCapacity/newTwitter/models.py	/^	downVotes = models.IntegerField(default=0)$/;"	kind:variable	line:13
 downVotes	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        downVotes = models.IntegerField(default=0)$/;"	kind:variable	line:13
-downVotes	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        downVotes = models.IntegerField(default=0)$/;"	kind:variable	line:13
 execute_from_command_line	../1 - basicExampleSite/manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
 execute_from_command_line	../2 - expandedCodeCapacity/manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
 execute_from_command_line	../3 - expandedModelCapacity/manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
-execute_from_command_line	../4 - outgoingEmailCapabilities/manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
 fields	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:21
 fields	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:21
-fields	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:21
 func	../2 - expandedCodeCapacity/newCode/codeLib/__init__.py	/^from . import func/;"	kind:namespace	line:1
 func	../2 - expandedCodeCapacity/newCode/codeLib/urls.py	/^from . import func$/;"	kind:namespace	line:3
 func	../3 - expandedModelCapacity/newCode/codeLib/__init__.py	/^from . import func/;"	kind:namespace	line:1
 func	../3 - expandedModelCapacity/newCode/codeLib/urls.py	/^from . import func$/;"	kind:namespace	line:3
-func	../4 - outgoingEmailCapabilities/newCode/codeLib/__init__.py	/^from . import func/;"	kind:namespace	line:1
-func	../4 - outgoingEmailCapabilities/newCode/codeLib/urls.py	/^from . import func$/;"	kind:namespace	line:3
 func.py	../2 - expandedCodeCapacity/newCode/codeLib/func.py	1;"	kind:file	line:1
 func.py	../3 - expandedModelCapacity/newCode/codeLib/func.py	1;"	kind:file	line:1
-func.py	../4 - outgoingEmailCapabilities/newCode/codeLib/func.py	1;"	kind:file	line:1
 getTweets	../1 - basicExampleSite/newTwitter/views.py	/^def getTweets(request):$/;"	kind:function	line:13
 getTweets	../2 - expandedCodeCapacity/newTwitter/views/data.py	/^def getTweets(request):$/;"	kind:function	line:4
 getTweets	../3 - expandedModelCapacity/newTwitter/views/data.py	/^def getTweets(request):$/;"	kind:function	line:4
-getTweets	../4 - outgoingEmailCapabilities/newTwitter/views/data.py	/^def getTweets(request):$/;"	kind:function	line:4
 get_wsgi_application	../1 - basicExampleSite/website/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:3
 get_wsgi_application	../2 - expandedCodeCapacity/website/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:3
 get_wsgi_application	../3 - expandedModelCapacity/website/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:3
-get_wsgi_application	../4 - outgoingEmailCapabilities/website/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:3
 include	../2 - expandedCodeCapacity/newCode/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
 include	../2 - expandedCodeCapacity/website/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
 include	../3 - expandedModelCapacity/newCode/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
 include	../3 - expandedModelCapacity/website/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
-include	../4 - outgoingEmailCapabilities/newCode/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
-include	../4 - outgoingEmailCapabilities/website/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
 index	../1 - basicExampleSite/newTwitter/views.py	/^def index(request):$/;"	kind:function	line:6
 index	../2 - expandedCodeCapacity/newCode/codeLib/func.py	/^def index(request):$/;"	kind:function	line:3
 index	../2 - expandedCodeCapacity/newCode/data.py	/^def index(request):$/;"	kind:function	line:3
@@ -235,57 +172,40 @@ index	../3 - expandedModelCapacity/newCode/codeLib/func.py	/^def index(request):
 index	../3 - expandedModelCapacity/newCode/data.py	/^def index(request):$/;"	kind:function	line:3
 index	../3 - expandedModelCapacity/newCode/info.py	/^def index(request):$/;"	kind:function	line:3
 index	../3 - expandedModelCapacity/newTwitter/views/main.py	/^def index(request):$/;"	kind:function	line:4
-index	../4 - outgoingEmailCapabilities/newCode/codeLib/func.py	/^def index(request):$/;"	kind:function	line:3
-index	../4 - outgoingEmailCapabilities/newCode/data.py	/^def index(request):$/;"	kind:function	line:3
-index	../4 - outgoingEmailCapabilities/newCode/info.py	/^def index(request):$/;"	kind:function	line:3
-index	../4 - outgoingEmailCapabilities/newTwitter/views/main.py	/^def index(request):$/;"	kind:function	line:6
 info	../2 - expandedCodeCapacity/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
 info	../2 - expandedCodeCapacity/newCode/urls.py	/^from . import data, info$/;"	kind:namespace	line:3
 info	../3 - expandedModelCapacity/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
 info	../3 - expandedModelCapacity/newCode/urls.py	/^from . import data, info$/;"	kind:namespace	line:3
-info	../4 - outgoingEmailCapabilities/newCode/__init__.py	/^from . import data, info, codeLib/;"	kind:namespace	line:1
-info	../4 - outgoingEmailCapabilities/newCode/urls.py	/^from . import data, info$/;"	kind:namespace	line:3
 info.py	../2 - expandedCodeCapacity/newCode/info.py	1;"	kind:file	line:1
 info.py	../3 - expandedModelCapacity/newCode/info.py	1;"	kind:file	line:1
-info.py	../4 - outgoingEmailCapabilities/newCode/info.py	1;"	kind:file	line:1
 initial	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:12
 initial	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:12
-initial	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:12
 json	../1 - basicExampleSite/newTwitter/views.py	/^import django, json$/;"	kind:namespace	line:1
 json	../2 - expandedCodeCapacity/newTwitter/views/data.py	/^import django, json$/;"	kind:namespace	line:1
 json	../3 - expandedModelCapacity/newTwitter/views/data.py	/^import django, json$/;"	kind:namespace	line:1
-json	../4 - outgoingEmailCapabilities/newTwitter/views/data.py	/^import django, json$/;"	kind:namespace	line:1
 list_display	../1 - basicExampleSite/newTwitter/admin.py	/^	list_display = ['tweetId','author','text','upVotes','downVotes']$/;"	kind:variable	line:5
 list_display	../2 - expandedCodeCapacity/newTwitter/admin.py	/^	list_display = ['tweetId','author','text','upVotes','downVotes']$/;"	kind:variable	line:5
 list_display	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        list_display = ['tweetId','author','text','upVotes','downVotes']$/;"	kind:variable	line:28
-list_display	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        list_display = ['tweetId','author','text','upVotes','downVotes']$/;"	kind:variable	line:28
 login	../1 - basicExampleSite/newTwitter/views.py	/^def login(request):$/;"	kind:function	line:32
 login	../2 - expandedCodeCapacity/newTwitter/views/auth.py	/^def login(request):$/;"	kind:function	line:4
 login	../3 - expandedModelCapacity/newTwitter/views/auth.py	/^def login(request):$/;"	kind:function	line:4
-login	../4 - outgoingEmailCapabilities/newTwitter/views/auth.py	/^def login(request):$/;"	kind:function	line:4
 login_required	../1 - basicExampleSite/newTwitter/views.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:3
 login_required	../2 - expandedCodeCapacity/newTwitter/views/auth.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:2
 login_required	../3 - expandedModelCapacity/newTwitter/views/auth.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:2
-login_required	../4 - outgoingEmailCapabilities/newTwitter/views/auth.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:2
 logout	../1 - basicExampleSite/newTwitter/views.py	/^def logout(request):$/;"	kind:function	line:53
 logout	../2 - expandedCodeCapacity/newTwitter/views/auth.py	/^def logout(request):$/;"	kind:function	line:25
 logout	../3 - expandedModelCapacity/newTwitter/views/auth.py	/^def logout(request):$/;"	kind:function	line:25
-logout	../4 - outgoingEmailCapabilities/newTwitter/views/auth.py	/^def logout(request):$/;"	kind:function	line:25
-mail	../4 - outgoingEmailCapabilities/utilityCode/__init__.py	/^from . import mail/;"	kind:namespace	line:1
-mail.py	../4 - outgoingEmailCapabilities/utilityCode/mail.py	1;"	kind:file	line:1
+mail	../additionals/emailUtilityCode/__init__.py	/^from . import mail/;"	kind:namespace	line:1
+mail.py	../additionals/emailUtilityCode/mail.py	1;"	kind:file	line:1
 main	../2 - expandedCodeCapacity/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
 main	../3 - expandedModelCapacity/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
-main	../4 - outgoingEmailCapabilities/newTwitter/views/__init__.py	/^from . import main, auth, data/;"	kind:namespace	line:1
 main.py	../2 - expandedCodeCapacity/newTwitter/views/main.py	1;"	kind:file	line:1
 main.py	../3 - expandedModelCapacity/newTwitter/views/main.py	1;"	kind:file	line:1
-main.py	../4 - outgoingEmailCapabilities/newTwitter/views/main.py	1;"	kind:file	line:1
 manage.py	../1 - basicExampleSite/manage.py	1;"	kind:file	line:1
 manage.py	../2 - expandedCodeCapacity/manage.py	1;"	kind:file	line:1
 manage.py	../3 - expandedModelCapacity/manage.py	1;"	kind:file	line:1
-manage.py	../4 - outgoingEmailCapabilities/manage.py	1;"	kind:file	line:1
 migrations	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:6
 migrations	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:6
-migrations	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:6
 models	../1 - basicExampleSite/newTwitter/models.py	/^from django.db import models$/;"	kind:namespace	line:1
 models	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:6
 models	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
@@ -295,10 +215,6 @@ models	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^from
 models	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
 models	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^from django.db import models$/;"	kind:namespace	line:1
 models	../3 - expandedModelCapacity/newTwitter/views/data.py	/^from .. import models$/;"	kind:namespace	line:2
-models	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:6
-models	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
-models	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^from django.db import models$/;"	kind:namespace	line:1
-models	../4 - outgoingEmailCapabilities/newTwitter/views/data.py	/^from .. import models$/;"	kind:namespace	line:2
 models.py	../1 - basicExampleSite/newTwitter/models.py	1;"	kind:file	line:1
 models.py	../2 - expandedCodeCapacity/newTwitter/models.py	1;"	kind:file	line:1
 name	../1 - basicExampleSite/newTwitter/apps.py	/^    name = 'newTwitter'/;"	kind:variable	line:5
@@ -306,18 +222,13 @@ name	../2 - expandedCodeCapacity/newTwitter/apps.py	/^    name = 'newTwitter'/;"
 name	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^            name='tweet',$/;"	kind:variable	line:20
 name	../3 - expandedModelCapacity/newTwitter/apps.py	/^    name = 'newTwitter'/;"	kind:variable	line:5
 name	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^            name='tweet',$/;"	kind:variable	line:20
-name	../4 - outgoingEmailCapabilities/newTwitter/apps.py	/^    name = 'newTwitter'/;"	kind:variable	line:5
-name	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^            name='tweet',$/;"	kind:variable	line:20
 newCode	../2 - expandedCodeCapacity/website/urls.py	/^import newCode$/;"	kind:namespace	line:5
 newCode	../3 - expandedModelCapacity/website/urls.py	/^import newCode$/;"	kind:namespace	line:5
-newCode	../4 - outgoingEmailCapabilities/website/urls.py	/^import newCode$/;"	kind:namespace	line:5
 newTwitterConfig	../1 - basicExampleSite/newTwitter/apps.py	/^class newTwitterConfig(AppConfig):$/;"	kind:class	line:4
 newTwitterConfig	../2 - expandedCodeCapacity/newTwitter/apps.py	/^class newTwitterConfig(AppConfig):$/;"	kind:class	line:4
 newTwitterConfig	../3 - expandedModelCapacity/newTwitter/apps.py	/^class newTwitterConfig(AppConfig):$/;"	kind:class	line:4
-newTwitterConfig	../4 - outgoingEmailCapabilities/newTwitter/apps.py	/^class newTwitterConfig(AppConfig):$/;"	kind:class	line:4
 operations	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:18
 operations	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:18
-operations	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:18
 os	../1 - basicExampleSite/manage.py	/^import os$/;"	kind:namespace	line:2
 os	../1 - basicExampleSite/website/settings.py	/^import os$/;"	kind:namespace	line:1
 os	../1 - basicExampleSite/website/wsgi.py	/^import os$/;"	kind:namespace	line:1
@@ -327,57 +238,41 @@ os	../2 - expandedCodeCapacity/website/wsgi.py	/^import os$/;"	kind:namespace	li
 os	../3 - expandedModelCapacity/manage.py	/^import os$/;"	kind:namespace	line:2
 os	../3 - expandedModelCapacity/website/settings.py	/^import os$/;"	kind:namespace	line:1
 os	../3 - expandedModelCapacity/website/wsgi.py	/^import os$/;"	kind:namespace	line:1
-os	../4 - outgoingEmailCapabilities/manage.py	/^import os$/;"	kind:namespace	line:2
-os	../4 - outgoingEmailCapabilities/utilityCode/mail.py	/^import os$/;"	kind:namespace	line:1
-os	../4 - outgoingEmailCapabilities/website/settings.py	/^import os$/;"	kind:namespace	line:1
-os	../4 - outgoingEmailCapabilities/website/wsgi.py	/^import os$/;"	kind:namespace	line:1
+os	../additionals/emailUtilityCode/mail.py	/^import os$/;"	kind:namespace	line:1
 render	../1 - basicExampleSite/newTwitter/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:2
 render	../2 - expandedCodeCapacity/newTwitter/views/main.py	/^from django.shortcuts import render$/;"	kind:namespace	line:2
 render	../3 - expandedModelCapacity/newTwitter/views/main.py	/^from django.shortcuts import render$/;"	kind:namespace	line:2
-render	../4 - outgoingEmailCapabilities/newTwitter/views/main.py	/^from django.shortcuts import render$/;"	kind:namespace	line:2
-sendMail	../4 - outgoingEmailCapabilities/utilityCode/mail.py	/^def sendMail(origin, destination, header, body):$/;"	kind:function	line:3
+sendMail	../additionals/emailUtilityCode/mail.py	/^def sendMail(origin, destination, header, body):$/;"	kind:function	line:3
 settings	../1 - basicExampleSite/newTwitter/models.py	/^from django.conf import settings$/;"	kind:namespace	line:2
 settings	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^from django.conf import settings$/;"	kind:namespace	line:5
 settings	../2 - expandedCodeCapacity/newTwitter/models.py	/^from django.conf import settings$/;"	kind:namespace	line:2
 settings	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^from django.conf import settings$/;"	kind:namespace	line:5
 settings	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^from django.conf import settings$/;"	kind:namespace	line:2
-settings	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^from django.conf import settings$/;"	kind:namespace	line:5
-settings	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^from django.conf import settings$/;"	kind:namespace	line:2
 settings.py	../1 - basicExampleSite/website/settings.py	1;"	kind:file	line:1
 settings.py	../2 - expandedCodeCapacity/website/settings.py	1;"	kind:file	line:1
 settings.py	../3 - expandedModelCapacity/website/settings.py	1;"	kind:file	line:1
-settings.py	../4 - outgoingEmailCapabilities/website/settings.py	1;"	kind:file	line:1
 sys	../1 - basicExampleSite/manage.py	/^import sys$/;"	kind:namespace	line:3
 sys	../2 - expandedCodeCapacity/manage.py	/^import sys$/;"	kind:namespace	line:3
 sys	../3 - expandedModelCapacity/manage.py	/^import sys$/;"	kind:namespace	line:3
-sys	../4 - outgoingEmailCapabilities/manage.py	/^import sys$/;"	kind:namespace	line:3
 text	../1 - basicExampleSite/newTwitter/models.py	/^	text = models.CharField(max_length=140)$/;"	kind:variable	line:10
 text	../2 - expandedCodeCapacity/newTwitter/models.py	/^	text = models.CharField(max_length=140)$/;"	kind:variable	line:10
 text	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        text = models.CharField(max_length=140)$/;"	kind:variable	line:10
-text	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        text = models.CharField(max_length=140)$/;"	kind:variable	line:10
 tweet	../1 - basicExampleSite/newTwitter/models.py	/^class tweet(models.Model):$/;"	kind:class	line:4
 tweet	../2 - expandedCodeCapacity/newTwitter/models.py	/^class tweet(models.Model):$/;"	kind:class	line:4
 tweet	../3 - expandedModelCapacity/newTwitter/models/__init__.py	/^from . import tweet/;"	kind:namespace	line:1
 tweet	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^class tweet(models.Model):$/;"	kind:class	line:4
-tweet	../4 - outgoingEmailCapabilities/newTwitter/models/__init__.py	/^from . import tweet/;"	kind:namespace	line:1
-tweet	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^class tweet(models.Model):$/;"	kind:class	line:4
 tweet.py	../3 - expandedModelCapacity/newTwitter/models/tweet.py	1;"	kind:file	line:1
-tweet.py	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	1;"	kind:file	line:1
 tweetId	../1 - basicExampleSite/newTwitter/models.py	/^	tweetId = models.AutoField(primary_key=True)$/;"	kind:variable	line:5
 tweetId	../2 - expandedCodeCapacity/newTwitter/models.py	/^	tweetId = models.AutoField(primary_key=True)$/;"	kind:variable	line:5
 tweetId	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        tweetId = models.AutoField(primary_key=True)$/;"	kind:variable	line:5
-tweetId	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        tweetId = models.AutoField(primary_key=True)$/;"	kind:variable	line:5
 tweet_admin	../1 - basicExampleSite/newTwitter/admin.py	/^class tweet_admin(admin.ModelAdmin):$/;"	kind:class	line:4
 tweet_admin	../2 - expandedCodeCapacity/newTwitter/admin.py	/^class tweet_admin(admin.ModelAdmin):$/;"	kind:class	line:4
 tweet_admin	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^class tweet_admin(admin.ModelAdmin):$/;"	kind:class	line:27
-tweet_admin	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^class tweet_admin(admin.ModelAdmin):$/;"	kind:class	line:27
 unicode_literals	../2 - expandedCodeCapacity/newTwitter/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
 unicode_literals	../3 - expandedModelCapacity/newTwitter/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
-unicode_literals	../4 - outgoingEmailCapabilities/newTwitter/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
 upVotes	../1 - basicExampleSite/newTwitter/models.py	/^	upVotes = models.IntegerField(default=0)$/;"	kind:variable	line:12
 upVotes	../2 - expandedCodeCapacity/newTwitter/models.py	/^	upVotes = models.IntegerField(default=0)$/;"	kind:variable	line:12
 upVotes	../3 - expandedModelCapacity/newTwitter/models/tweet.py	/^        upVotes = models.IntegerField(default=0)$/;"	kind:variable	line:12
-upVotes	../4 - outgoingEmailCapabilities/newTwitter/models/tweet.py	/^        upVotes = models.IntegerField(default=0)$/;"	kind:variable	line:12
 url	../1 - basicExampleSite/website/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
 url	../2 - expandedCodeCapacity/newCode/codeLib/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
 url	../2 - expandedCodeCapacity/newCode/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
@@ -385,9 +280,6 @@ url	../2 - expandedCodeCapacity/website/urls.py	/^from django.conf.urls import u
 url	../3 - expandedModelCapacity/newCode/codeLib/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
 url	../3 - expandedModelCapacity/newCode/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
 url	../3 - expandedModelCapacity/website/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
-url	../4 - outgoingEmailCapabilities/newCode/codeLib/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
-url	../4 - outgoingEmailCapabilities/newCode/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
-url	../4 - outgoingEmailCapabilities/website/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:1
 urlpatterns	../1 - basicExampleSite/website/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
 urlpatterns	../2 - expandedCodeCapacity/newCode/codeLib/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
 urlpatterns	../2 - expandedCodeCapacity/newCode/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
@@ -395,9 +287,6 @@ urlpatterns	../2 - expandedCodeCapacity/website/urls.py	/^urlpatterns = [$/;"	ki
 urlpatterns	../3 - expandedModelCapacity/newCode/codeLib/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
 urlpatterns	../3 - expandedModelCapacity/newCode/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
 urlpatterns	../3 - expandedModelCapacity/website/urls.py	/^urlpatterns = [$/;"	kind:variable	line:7
-urlpatterns	../4 - outgoingEmailCapabilities/newCode/codeLib/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
-urlpatterns	../4 - outgoingEmailCapabilities/newCode/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
-urlpatterns	../4 - outgoingEmailCapabilities/website/urls.py	/^urlpatterns = [$/;"	kind:variable	line:7
 urls.py	../1 - basicExampleSite/website/urls.py	1;"	kind:file	line:1
 urls.py	../2 - expandedCodeCapacity/newCode/codeLib/urls.py	1;"	kind:file	line:1
 urls.py	../2 - expandedCodeCapacity/newCode/urls.py	1;"	kind:file	line:1
@@ -405,16 +294,10 @@ urls.py	../2 - expandedCodeCapacity/website/urls.py	1;"	kind:file	line:1
 urls.py	../3 - expandedModelCapacity/newCode/codeLib/urls.py	1;"	kind:file	line:1
 urls.py	../3 - expandedModelCapacity/newCode/urls.py	1;"	kind:file	line:1
 urls.py	../3 - expandedModelCapacity/website/urls.py	1;"	kind:file	line:1
-urls.py	../4 - outgoingEmailCapabilities/newCode/codeLib/urls.py	1;"	kind:file	line:1
-urls.py	../4 - outgoingEmailCapabilities/newCode/urls.py	1;"	kind:file	line:1
-urls.py	../4 - outgoingEmailCapabilities/website/urls.py	1;"	kind:file	line:1
-utilityCode	../4 - outgoingEmailCapabilities/newTwitter/views/main.py	/^import utilityCode$/;"	kind:namespace	line:4
 views	../1 - basicExampleSite/website/urls.py	/^from newTwitter import views$/;"	kind:namespace	line:3
 views	../2 - expandedCodeCapacity/website/urls.py	/^from newTwitter import views$/;"	kind:namespace	line:3
 views	../3 - expandedModelCapacity/website/urls.py	/^from newTwitter import views$/;"	kind:namespace	line:3
-views	../4 - outgoingEmailCapabilities/website/urls.py	/^from newTwitter import views$/;"	kind:namespace	line:3
 views.py	../1 - basicExampleSite/newTwitter/views.py	1;"	kind:file	line:1
 wsgi.py	../1 - basicExampleSite/website/wsgi.py	1;"	kind:file	line:1
 wsgi.py	../2 - expandedCodeCapacity/website/wsgi.py	1;"	kind:file	line:1
 wsgi.py	../3 - expandedModelCapacity/website/wsgi.py	1;"	kind:file	line:1
-wsgi.py	../4 - outgoingEmailCapabilities/website/wsgi.py	1;"	kind:file	line:1
