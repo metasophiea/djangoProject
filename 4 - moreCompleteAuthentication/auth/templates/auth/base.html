@@ -8,8 +8,6 @@
   <body>
     {% block body %}
 
-    <em>Important: Authentication via OAuth based providers will not work until you <a href="/admin/socialaccount/socialapp/">setup proper applicaton credentials</a>.</em>
-
     {% if messages %}
     <div>
       <strong>Messages:</strong>
@@ -22,7 +20,7 @@
     {% endif %}
 
     <div>
-      <strong>Menu:</strong>
+      <strong>The Menu:</strong>
       <ul>
 	{% if user.is_authenticated %}
 	<li><a href="{% url 'account_email' %}">Change E-mail</a></li>

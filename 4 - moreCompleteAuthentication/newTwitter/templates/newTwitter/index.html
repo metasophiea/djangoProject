@@ -1,7 +1,30 @@
-{% extends "auth/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-<h1>Example Project</h1>
+<head>
+	<title>metasophiea</title>
+	<meta charset="utf-8"></meta>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="/static/js/code.js"></script>
+	<script>
+		function Go(){
+			console.log('hello');
+			$.getJSON( "/tweetData/", dealWithData );
+		}
+	</script>
+	<style>
+		p{
+			background-color: #ffbb7c;
+		}
+	</style>
+</head>
 
-<p>Welcome</p>
-{% endblock %}
+<body onLoad="Go()">
+    <!-- signin:         accounts/login -->
+    <!-- signout:        accounts/logout -->
+    <!-- signup:         accounts/signup -->
+    <!-- password reset: accounts/password/reset/ -->
+
+	<h1>Hello</h1>
+</body>
+</html>

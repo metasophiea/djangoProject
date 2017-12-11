@@ -16,6 +16,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SITE_ID = 1
 
+LOGIN_REDIRECT_URL = '/'
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -49,7 +51,7 @@ ROOT_URLCONF = 'website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'auth', 'templates') ],
+        'DIRS': [ os.path.join(BASE_DIR, 'auth', 'templates', 'auth') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

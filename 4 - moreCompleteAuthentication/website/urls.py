@@ -9,9 +9,9 @@ urlpatterns = [
 	url(r'^admin/', admin.site.urls),
 
     url(r'^accounts/', include('allauth.urls')),
-	url(r'^accounts/profile/$', views.main.profile),
 
 	url(r'^privateStuff/$', views.main.privateStuff),
+	url(r'^otherPrivateStuff/$', views.main.otherPrivateStuff),
 
 	url(r'^newCode/', include('newCode.urls')),
 
