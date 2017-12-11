@@ -56,7 +56,7 @@ END\
 echo ""
 
 echo; echo -------- Installing Django --------; echo;
-pip3 install django
+pip3 install django django-allauth
 
 echo; echo -------- Setting up a Django project and loading website code --------; echo;
 django-admin startproject website
