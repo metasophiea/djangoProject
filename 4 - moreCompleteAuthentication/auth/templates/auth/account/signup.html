@@ -1,21 +1,80 @@
-{% extends "account/base.html" %}
+<!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <title>signup - metasophiea</title>
+    <meta charset="utf-8"></meta>
+  
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+    <script>
+    
+      var providers = [
+        {% load i18n %}
+        {% load account socialaccount %}
+        {% get_providers as socialaccount_providers %}
+        {% for provider in socialaccount_providers %}
+          { 
+            "name": "{{provider.name}}",
+            "id":"{{provider.id}}",
+            "provider_login_url": "{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}",
+          },
+        {% endfor %}
+      ];
+  
+      function go(){
+        for(var a = 0; a < providers.length; a++){
+          console.log(providers[a]);
+  
+          element = document.createElement('a');
+          element.title = providers[a].name;
+          element.class = "socialaccount_provider" + providers[a].id;
+          element.href = providers[a].provider_login_url;
+          element.innerHTML = providers[a].name;
+  
+          document.getElementById('providerSignupCard').appendChild( element );
+        }
+      }
+    
+    </script>
+    <style>
+      html{ font-family: Raleway; }
+    </style>
+  </head>
+  
+  <body onLoad="go()">
+  
+      <section id='standardSignupCard' class='card' style='text-align:center;'>
+        <h1 class='mainTitle'>SignUp</h1>
+  
+        <form class="signup" method="post" action="{% url 'account_signup' %}">
+          {% csrf_token %}
+  
+          <p class='formInputText'> 
+            <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" minlength="1" maxlength="150" autofocus="autofocus" placeholder="username" required id="id_username" />
+          </p>
+          
+          <p class='formInputText'>
+              <input type="email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" placeholder="E-mail address" id="id_email" />
+          </p>
+  
+          <p class='formInputText'> 
+            <input type="password" name="password1" placeholder="password" required id="id_password1" />
+          </p>
+  
+          <p class='formInputText'>
+            <input type="password" name="password2" placeholder="repeat password" required id="id_password2" />
+          </p>
 
-{% load i18n %}
-
-{% block head_title %}{% trans "Signup" %}{% endblock %}
-
-{% block content %}
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
-{% endblock %}
+          <input class='button' type='submit' value='signup'/>
+        </form>
+  
+      </section> 
+  
+    <br/>
+  
+    <section id='providerSignupCard' class='card' style='text-align:center;'>
+    </section>
+  
+  </body>
+  </html>
