@@ -1,80 +1,88 @@
 <!DOCTYPE html>
-  <html lang="en">
-  
-  <head>
-    <title>signup - metasophiea</title>
-    <meta charset="utf-8"></meta>
-  
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  
-    <script>
-    
-      var providers = [
-        {% load i18n %}
-        {% load account socialaccount %}
-        {% get_providers as socialaccount_providers %}
-        {% for provider in socialaccount_providers %}
-          { 
-            "name": "{{provider.name}}",
-            "id":"{{provider.id}}",
-            "provider_login_url": "{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}",
-          },
-        {% endfor %}
-      ];
-  
-      function go(){
-        for(var a = 0; a < providers.length; a++){
-          console.log(providers[a]);
-  
-          element = document.createElement('a');
-          element.title = providers[a].name;
-          element.class = "socialaccount_provider" + providers[a].id;
-          element.href = providers[a].provider_login_url;
-          element.innerHTML = providers[a].name;
-  
-          document.getElementById('providerSignupCard').appendChild( element );
-        }
-      }
-    
-    </script>
-    <style>
-      html{ font-family: Raleway; }
-    </style>
-  </head>
-  
-  <body onLoad="go()">
-  
-      <section id='standardSignupCard' class='card' style='text-align:center;'>
-        <h1 class='mainTitle'>SignUp</h1>
-  
-        <form class="signup" method="post" action="{% url 'account_signup' %}">
-          {% csrf_token %}
-  
-          <p class='formInputText'> 
-            <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" minlength="1" maxlength="150" autofocus="autofocus" placeholder="username" required id="id_username" />
-          </p>
-          
-          <p class='formInputText'>
-              <input type="email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" placeholder="E-mail address" id="id_email" />
-          </p>
-  
-          <p class='formInputText'> 
-            <input type="password" name="password1" placeholder="password" required id="id_password1" />
-          </p>
-  
-          <p class='formInputText'>
-            <input type="password" name="password2" placeholder="repeat password" required id="id_password2" />
-          </p>
+<html lang="en">
 
-          <input class='button' type='submit' value='signup'/>
-        </form>
+<head>
+  <title>signup - metasophiea</title>
+  <meta charset="utf-8"></meta>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <script>
   
-      </section> 
+    var providers = [
+      {% load i18n %}
+      {% load account socialaccount %}
+      {% get_providers as socialaccount_providers %}
+      {% for provider in socialaccount_providers %}
+        { 
+          "name": "{{provider.name}}",
+          "id":"{{provider.id}}",
+          "provider_login_url": "{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}",
+        },
+      {% endfor %}
+    ];
+
+    function go(){
+      for(var a = 0; a < providers.length; a++){
+        console.log(providers[a]);
+
+        element = document.createElement('a');
+        element.title = providers[a].name;
+        element.class = "socialaccount_provider" + providers[a].id;
+        element.href = providers[a].provider_login_url;
+        element.innerHTML = providers[a].name;
+
+        document.getElementById('providerSignupCard').appendChild( element );
+      }
+    }
   
-    <br/>
-  
-    <section id='providerSignupCard' class='card' style='text-align:center;'>
-    </section>
-  
-  </body>
-  </html>
+  </script>
+  <style>
+    html{ font-family: Raleway; }
+    .error{ 
+      color: red;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body onLoad="go()">
+
+    <section id='standardSignupCard' class='card' style='text-align:center;'>
+      <h1 class='mainTitle'>SignUp</h1>
+
+      <form class="signup" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+
+        <p class='formInputText'> 
+          <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" minlength="1" maxlength="150" autofocus="autofocus" placeholder="username" required id="id_username" />
+          <p class='error' >{% if form.errors.username.as_text %}{{ form.errors.username.as_text }}{% endif %}</p>
+        </p>
+        
+        <p class='formInputText'>
+            <input type="email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" placeholder="E-mail address" id="id_email" />
+            <p class='error' >{% if form.errors.email.as_text %}{{ form.errors.email.as_text }}{% endif %}</p>
+        </p>
+
+        <p class='formInputText'> 
+          <input type="password" name="password1" placeholder="password" required id="id_password1" />
+          <p class='error' >{% if form.errors.password1.as_text %}{{ form.errors.password1.as_text }}{% endif %}</p>
+        </p>
+
+        <p class='formInputText'>
+          <input type="password" name="password2" placeholder="repeat password" required id="id_password2" />
+          <p class='error' >{% if form.errors.password2.as_text %}{{ form.errors.password2.as_text }}{% endif %}</p>
+        </p>
+
+        <input class='button' type='submit' value='signup'/>
+      </form>
+
+    </section> 
+
+  <br/>
+
+  <section id='providerSignupCard' class='card' style='text-align:center;'>
+  </section>
+
+</body>
+</html>
