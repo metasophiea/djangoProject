@@ -1,46 +1,80 @@
-{% extends "account/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% load i18n %}
-{% load account socialaccount %}
+<head>
+  <title>login - metasophiea</title>
+	<meta charset="utf-8"></meta>
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-{% block content %}
+	<script>
+  
+    var providers = [
+      {% load i18n %}
+      {% load account socialaccount %}
+      {% get_providers as socialaccount_providers %}
+      {% for provider in socialaccount_providers %}
+        { 
+          "name": "{{provider.name}}",
+          "id":"{{provider.id}}",
+          "provider_login_url": "{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}",
+        },
+      {% endfor %}
+    ];
 
-<h1>{% trans "Sign In" %}</h1>
+    function go(){
+      for(var a = 0; a < providers.length; a++){
+        console.log(providers[a]);
 
-{% get_providers as socialaccount_providers %}
+        element = document.createElement('a');
+        element.title = providers[a].name;
+        element.class = "socialaccount_provider" + providers[a].id;
+        element.href = providers[a].provider_login_url;
+        element.innerHTML = providers[a].name;
 
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+        document.getElementById('providerLoginCard').appendChild( element );
+      }
+    }
+  
+  </script>
+	<style>
+    html{ font-family: Raleway; }
+  </style>
+</head>
 
-<div class="socialaccount_ballot">
+<body onLoad="go()">
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+    <section id='standardLoginCard' class='card' style='text-align:center;'>
+      <h1 class='mainTitle'>Login</h1>
 
-  <div class="login-or">{% trans 'or' %}</div>
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
 
-</div>
+        <p class='formInputText'> 
+          <input id='id_login' type='text' name='login' autofocus="autofocus" required placeholder="username"/>
+        </p>
 
-{% include "socialaccount/snippets/login_extra.html" %}
+        <p class='formInputText'>
+          <input id='id_password' type='password' name='password' required placeholder="password"/>
+        </p>
 
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
+        <p class='formInputCheckBox'>Remember Me
+          <input type="checkbox" name="remember" id="id_remember"/>
+        </p>
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+        <input class='button' type='submit' value='login'/>
+      </form>
 
-{% endblock %}
+    </section> 
+
+  <br/>
+
+	<section id='providerLoginCard' class='card' style='text-align:center;'>
+  </section>
+
+</body>
+</html>
