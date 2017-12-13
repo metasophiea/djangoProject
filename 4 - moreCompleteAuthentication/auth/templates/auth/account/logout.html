@@ -1,21 +1,29 @@
-{% extends "account/base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>signout - metasophiea</title>
+  <meta charset="utf-8"></meta>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-{% load i18n %}
+  <script>
+    function go(){
+      document.getElementById("signoutForm").submit(); 
+    }
+  </script>
+    
+  <style>
+    html{ font-family: Raleway; }
+  </style>
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+</head>
 
-{% block content %}
-<h1>{% trans "Sign Out" %}</h1>
+<body onLoad='go()'>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+  signing out...
+  <form id='signoutForm' method="post" action="/accounts/logout/">
+    {% csrf_token %}
+    <button type="submit"></button>
+  </form>
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
-
-
-{% endblock %}
+</body>
+</html>

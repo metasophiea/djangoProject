@@ -32,56 +32,81 @@
         element.href = providers[a].provider_login_url;
         element.innerHTML = providers[a].name;
 
-        document.getElementById('providerSignupCard').appendChild( element );
+        document.getElementById('providerCard').appendChild( element );
       }
     }
   
   </script>
   <style>
     html{ font-family: Raleway; }
-    .error{ 
+    h1{ margin: 0px 0px 5px 0px; }
+    .errors{ 
       color: red;
       font-size: 13px;
+    }
+    #signupCard{
+      text-align:center;
+      width: 320px;
+      margin: auto;
+      padding: 10px;
+      background-color: rgb(243, 242, 242);
+    }
+
+    #providerCard{
+      text-align:center;
+      width: 320px;
+      margin: auto;
+      padding: 10px;
+      background-color: rgb(243, 242, 242);
     }
   </style>
 </head>
 
 <body onLoad="go()">
 
-    <section id='standardSignupCard' class='card' style='text-align:center;'>
-      <h1 class='mainTitle'>SignUp</h1>
+  <section id='signupCard'>
+    <h1 class='mainTitle'>SignUp</h1>
 
-      <form class="signup" method="post" action="{% url 'account_signup' %}">
-        {% csrf_token %}
+    <form class="signup" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
 
-        <p class='formInputText'> 
-          <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" minlength="1" maxlength="150" autofocus="autofocus" placeholder="username" required id="id_username" />
-          <p class='error' >{% if form.errors.username.as_text %}{{ form.errors.username.as_text }}{% endif %}</p>
-        </p>
-        
-        <p class='formInputText'>
-            <input type="email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" placeholder="E-mail address" id="id_email" />
-            <p class='error' >{% if form.errors.email.as_text %}{{ form.errors.email.as_text }}{% endif %}</p>
-        </p>
+      <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" minlength="1" maxlength="150" autofocus="autofocus" placeholder="username" required id="id_username" />
+      <div class='errors'>
+          {% if form.username.errors %}{% for field in form.username.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+      
+      <input type="email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" placeholder="E-mail address" id="id_email" />
+      <div class='errors'>
+          {% if form.email.errors %}{% for field in form.email.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
 
-        <p class='formInputText'> 
-          <input type="password" name="password1" placeholder="password" required id="id_password1" />
-          <p class='error' >{% if form.errors.password1.as_text %}{{ form.errors.password1.as_text }}{% endif %}</p>
-        </p>
+      <input type="password" name="password1" placeholder="password" required id="id_password1" />
+      <div class='errors'>
+          {% if form.password1.errors %}{% for field in form.password1.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
 
-        <p class='formInputText'>
-          <input type="password" name="password2" placeholder="repeat password" required id="id_password2" />
-          <p class='error' >{% if form.errors.password2.as_text %}{{ form.errors.password2.as_text }}{% endif %}</p>
-        </p>
+      <input type="password" name="password2" placeholder="repeat password" required id="id_password2" />
+      <div class='errors'>
+          {% if form.password2.errors %}{% for field in form.password2.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
 
-        <input class='button' type='submit' value='signup'/>
-      </form>
+      <input class='button' type='submit' value='signup'/>
+    </form>
 
-    </section> 
+  </section> 
 
   <br/>
 
-  <section id='providerSignupCard' class='card' style='text-align:center;'>
+  <section id='providerCard' class='card' style='text-align:center;'>
+      <h1 class='mainTitle'>signup with</h1>
   </section>
 
 </body>
