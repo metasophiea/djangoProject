@@ -20,7 +20,7 @@
 <body onLoad='go()'>
 
   signing out...
-  <form id='signoutForm' method="post" action="/accounts/logout/">
+  <form id='signoutForm' method="post" action="/account/logout/">
     {% csrf_token %}
     <button type="submit"></button>
   </form>
