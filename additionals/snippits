@@ -1,0 +1,5 @@
+single line redirect for url.py: 
+    url(r'^signup/$', lambda request: django.http.HttpResponseRedirect("/account/signup"), name='signup'),
+    
+direct route to github socialaccount thing:
+    url(r'^login/providers/github',  include('allauth.socialaccount.providers.github.urls')),
