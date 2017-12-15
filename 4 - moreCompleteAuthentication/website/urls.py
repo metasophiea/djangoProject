@@ -13,6 +13,10 @@ urlpatterns = [
 	url(r'^signup/$', allauth.account.views.SignupView.as_view(), name='account_signup'),
 	url(r'^login/$', allauth.account.views.LoginView.as_view(), name='account_login'),
 	url(r'^logout/$', allauth.account.views.LogoutView.as_view(), name='account_logout'),
+	url(r'^resetPassword/$', allauth.account.views.PasswordResetView.as_view(), name='account_password_reset'),
+	url(r'^setPassword/$', allauth.account.views.PasswordChangeView.as_view(), name='account_password_change'),
+	url(r'^changePassword/$', allauth.account.views.PasswordChangeView.as_view(), name='account_password_change'),
+
 	# (no 'as_view' - *name)
 	# AccountInactiveView				AddEmailForm					AjaxCapableProcessFormViewMixin
 	# ChangePasswordForm				CloseableSignupMixin			ConfirmEmailView
