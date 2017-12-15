@@ -43,15 +43,7 @@
     h1{ margin: 0px 0px 5px 0px; }
     .formInputCheckBox{ margin:5px; font-size: 14px; }
     #resetPasswordLink{ font-size: 14px; }
-    #loginCard{
-      text-align:center;
-      width: 320px;
-      margin: auto;
-      padding: 10px;
-      background-color: rgb(243, 242, 242);
-    }
-
-    #providerLoginCard{
+    .card{
       text-align:center;
       width: 320px;
       margin: auto;
@@ -64,7 +56,7 @@
 
 <body onLoad="go()">
 
-  <section id='loginCard'>
+  <section id='loginCard' class='card'>
     <h1 class='mainTitle'>Login</h1>
 
     <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -93,9 +85,11 @@
 
   <br/>
 
-  <section id='providerLoginCard' class='card' style='text-align:center;'>
+  <section id='providerLoginCard' class='card'>
       <h1 class='mainTitle'>login with</h1>
   </section>
+
+  {% include 'messageview.html' %}
 
 </body>
 </html>
