@@ -13,6 +13,12 @@ ALLOWED_HOSTS = ['192.168.122.33']
 
 # Emails that the system wants to send, are printed to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+# DEFAULT_FROM_EMAIL = 'brandon@metasophiea.com'
+# EMAIL_HOST = '127.0.0.1'
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_PORT = 25
 
 SITE_ID = 1
 
