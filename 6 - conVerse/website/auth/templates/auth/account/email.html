@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>change email - metasophiea</title>
+	<meta charset="utf-8">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <style>
+    html{ font-family: Raleway; }
+    h1, p{ margin: 0px 0px 5px 0px; }
+    .errors{ 
+      color: red;
+      font-size: 13px;
+    }    
+    .card{
+      text-align:center;
+      width: 320px;
+      margin: auto;
+      padding: 10px;
+      background-color: rgb(243, 242, 242);
+    }
+    .regularAction{background-color: rgb(216, 229, 238);}
+    .dangerAction{background-color: rgb(238, 209, 209);}
+  </style>
+
+</head>
+
+<body>
+
+    <section class='card'>
+    <h1>E-mail Addresses</h1>
+
+    {% if user.emailaddress_set.all %}
+      <p>The following e-mail addresses are associated with your account:</p>
+
+      <form action="{% url 'account_email' %}" method="post">
+        {% csrf_token %}
+        {% for emailaddress in user.emailaddress_set.all %}
+          <p>
+          <input 
+            id="email_radio_{{forloop.counter}}" 
+            type="radio" name="email" 
+            
+            value="{{emailaddress.email}}"/>
+            {{ emailaddress.email }}
+            {% if emailaddress.primary %} P {% endif %}
+            {% if emailaddress.verified %} Verified {% else %} Unverified {% endif %}
+          </p>
+        {% endfor %}
+
+        <div class="actions">
+          <button class="regularAction" type="submit" name="action_primary">Make Primary</button>
+          <button class="regularAction" type="submit" name="action_send">Re-send Verification</button>
+          <button class="dangerAction"  type="submit" name="action_remove">Remove</button>
+        </div>
+
+      </form>
+      
+    {% else %}
+      <p>You currently do not have any e-mail address set up. You should really add one so you can receive notifications, reset your password, etc.</p>
+    {% endif %}
+
+  </section>
+
+  <br/>
+
+  <section class='card'>
+    <h1>Add E-mail Address</h1>
+    <form method="post" action="{% url 'account_email' %}" class="add_email">
+      {% csrf_token %}
+      <input type="email" name="email" placeholder="email address" id="id_email" required size="30" />
+      <div class='errors'>
+          {% if form.email.errors %}{% for field in form.email.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+      <button name="action_add" class="regularAction" type="submit">Add E-mail</button>
+    </form>
+  </section>
+
+  {% include 'messageview.html' %}
+
+</body>
+</html>
+
+
+
+

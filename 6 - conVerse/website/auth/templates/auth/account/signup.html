@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>signup - metasophiea</title>
+  <meta charset="utf-8"></meta>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <script>
+  
+    var providers = [
+      {% load i18n %}
+      {% load account socialaccount %}
+      {% get_providers as socialaccount_providers %}
+      {% for provider in socialaccount_providers %}
+        { 
+          "name": "{{provider.name}}",
+          "id":"{{provider.id}}",
+          "provider_login_url": "{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}",
+        },
+      {% endfor %}
+    ];
+
+    function go(){
+      for(var a = 0; a < providers.length; a++){
+        console.log(providers[a]);
+
+        element = document.createElement('a');
+        element.title = providers[a].name;
+        element.class = "socialaccount_provider" + providers[a].id;
+        element.href = providers[a].provider_login_url;
+        element.innerHTML = providers[a].name;
+
+        document.getElementById('providerCard').appendChild( element );
+      }
+    }
+  
+  </script>
+  <style>
+    html{ font-family: Raleway; }
+    h1{ margin: 0px 0px 5px 0px; }
+    .errors{ 
+      color: red;
+      font-size: 13px;
+    }
+    #signupCard{
+      text-align:center;
+      width: 320px;
+      margin: auto;
+      padding: 10px;
+      background-color: rgb(243, 242, 242);
+    }
+
+    #providerCard{
+      text-align:center;
+      width: 320px;
+      margin: auto;
+      padding: 10px;
+      background-color: rgb(243, 242, 242);
+    }
+  </style>
+</head>
+
+<body onLoad="go()">
+
+  <section id='signupCard'>
+    <h1 class='mainTitle'>SignUp</h1>
+
+    <form class="signup" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+
+      <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" minlength="1" maxlength="150" autofocus="autofocus" placeholder="username" required id="id_username" />
+      <div class='errors'>
+          {% if form.username.errors %}{% for field in form.username.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+      
+      <input type="email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" placeholder="E-mail address" id="id_email" />
+      <div class='errors'>
+          {% if form.email.errors %}{% for field in form.email.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+
+      <input type="password" name="password1" placeholder="password" required id="id_password1" />
+      <div class='errors'>
+          {% if form.password1.errors %}{% for field in form.password1.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+
+      <input type="password" name="password2" placeholder="repeat password" required id="id_password2" />
+      <div class='errors'>
+          {% if form.password2.errors %}{% for field in form.password2.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+
+      <input class='button' type='submit' value='signup'/>
+    </form>
+
+  </section> 
+
+  <br/>
+
+  <section id='providerCard' class='card' style='text-align:center;'>
+      <h1 class='mainTitle'>signup with</h1>
+  </section>
+
+  {% include 'messageview.html' %}
+  
+</body>
+</html>

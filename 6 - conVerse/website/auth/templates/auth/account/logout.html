@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>signout - metasophiea</title>
+  <meta charset="utf-8"></meta>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <script>
+    function go(){
+      document.getElementById("signoutForm").submit(); 
+    }
+  </script>
+    
+  <style>
+    html{ font-family: Raleway; }
+  </style>
+
+</head>
+
+<body onLoad='go()'>
+
+  signing out...
+  <form id='signoutForm' method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    <button type="submit"></button>
+  </form>
+
+</body>
+</html>
