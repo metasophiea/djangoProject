@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>email confirmed - metasophiea</title>
+	<meta charset="utf-8">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script>
+        function go(){
+            document.getElementById("confirmForm").submit(); 
+        }
+    </script>
+
+    <style>
+        html{ font-family: Raleway; }
+        h1{ margin: 0px 0px 5px 0px; }
+        .formInputCheckBox{ margin:5px; font-size: 14px; }
+        #resetPasswordLink{ font-size: 14px; }
+        .card{
+            text-align:center;
+            width: 320px;
+            margin: auto;
+            padding: 10px;
+            background-color: rgb(243, 242, 242);
+        }
+    </style>
+
+</head>
+
+<body onLoad='go()'>
+
+    {% if confirmation %}
+        confirming email {{ confirmation.email_address.email }}...
+        <form id='confirmForm' method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+            {% csrf_token %}
+            <button type="submit">Confirm</button>
+        </form>
+    {% else %}
+        This e-mail confirmation link expired or is invalid
+    {% endif %}
+
+</body>
+</html>
+
+
