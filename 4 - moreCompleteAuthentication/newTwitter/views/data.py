@@ -9,6 +9,28 @@ def safeGetQuery(model,attribute,value):
 	try:    return model.objects.get(**{attribute: value})
 	except: return None
 
+def getTweets_byAuthorId(authorId):
+	return models.tweet.tweet.objects.filter(authorId=authorId)
+
+def getTweets_tweetIdRage(limit, index=None, start=None, end=None):
+	# perform the correct query depending on what arguments were used
+	if index is not None:
+		# get one specific tweet
+		items = [safeGetQuery(models.tweet.tweet, 'tweetId', index)]
+	elif start is None and end is None:
+		# get first 'limit' tweets
+		items = models.tweet.tweet.objects.filter(tweetId__gte=0, tweetId__lte=limit)
+	elif start is not None and end is None:
+		# get the tweets after and including start
+		items = models.tweet.tweet.objects.filter(tweetId__gte=start, tweetId__lte=(start+limit))
+	elif start is None and end is not None:
+		# get the tweets before and including end 
+		items = models.tweet.tweet.objects.filter(tweetId__gte=(end-limit), tweetId__lte=end)
+	else:
+		# get the tweets between and including start and end
+		items = models.tweet.tweet.objects.filter(tweetId__gte=start, tweetId__lte=(end if end <= (start+limit) else (start+limit)))
+
+	return items
 
 def getTweets(request):
 # GET arguments: start, end, index
@@ -21,22 +43,8 @@ def getTweets(request):
 	startIndex = safeInt(request.GET.get('start'))
 	endIndex = safeInt(request.GET.get('end'))
 
-	# perform the correct query depending on what arguments were used
-	if index is not None:
-		# get one specific tweet
-		items = [safeGetQuery(models.tweet.tweet, 'tweetId', index)]
-	elif startIndex is None and endIndex is None:
-		# get first 'limit' tweets
-		items = models.tweet.tweet.objects.filter(tweetId__gte=0, tweetId__lte=limit)
-	elif startIndex is not None and endIndex is None:
-		# get the tweets after and including startIndex
-		items = models.tweet.tweet.objects.filter(tweetId__gte=startIndex, tweetId__lte=(startIndex+limit))
-	elif startIndex is None and endIndex is not None:
-		# get the tweets before and including endIndex 
-		items = models.tweet.tweet.objects.filter(tweetId__gte=(endIndex-limit), tweetId__lte=endIndex)
-	else:
-		# get the tweets between and including startIndex and endIndex
-		items = models.tweet.tweet.objects.filter(tweetId__gte=startIndex, tweetId__lte=(endIndex if endIndex <= (startIndex+limit) else (startIndex+limit)))
+	# gather tweets
+	items = getTweets_tweetIdRage(limit, index, startIndex, endIndex)
 
 	# processes tweet objects into a mould for the JSON converter
 	outputArray = []

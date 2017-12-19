@@ -9,13 +9,6 @@ def index(request):
 	context = {}
 	return django.http.HttpResponse(template.render(context, request))
 
-def profile(request):
-	print("Profile page hit from user: " + str(request.user))
-
-	template = django.template.loader.get_template('newTwitter/profile.html')
-	context = {}
-	return django.http.HttpResponse(template.render(context, request))
-
 def signinup(request):
 	template = django.template.loader.get_template('newTwitter/signinup.html')
 	context = {}

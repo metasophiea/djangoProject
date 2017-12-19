@@ -27,6 +27,8 @@ urlpatterns = [
 	url(r"^confirmEmail/$", allauth.account.views.email_verification_sent, name="account_email_verification_sent"), # verification_sent.html
     url(r'^manageEmail/', allauth.account.views.email, name='account_email'), # email.html
 
+	url(r'^profile/', views.profile.main, name='profile'),
+	url(r'^submitTweet/', views.profile.submitTweet, name='submitTweet'),
 
 	url(r'^privateStuff/$', views.main.privateStuff),
 	url(r'^otherPrivateStuff/$', views.main.otherPrivateStuff),

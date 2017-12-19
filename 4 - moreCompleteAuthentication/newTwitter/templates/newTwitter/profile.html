@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>profile - metasophiea</title>
+	<meta charset="utf-8">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<script></script>
+	<style></style>
+</head>
+
+<body>
+
+    {{ user.username }}
+    {{ tweets }}
+
+    <form class="submitTweet" method="POST" action="{% url 'submitTweet' %}">
+        {% csrf_token %}
+        <div>
+            <input id='tweetId' type='text' name='tweetId' required placeholder="number"/>
+        </div>
+        <div>
+            <input id='text' type='text' name='text' required placeholder="text"/>
+        </div>
+        <div>
+            <input id='author' type='text' name='author' required placeholder="author"/>
+        </div>
+
+        <button class='button' type='submit' name='submit' value='submit'>submit</button>
+        <button class='button' type='submit' name='delete' value='delete'>delete</button>
+    </form>
+
+</body>
+</html>

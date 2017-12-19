@@ -1,1 +1,1 @@
-from . import main, data
+from . import main, data, profile
