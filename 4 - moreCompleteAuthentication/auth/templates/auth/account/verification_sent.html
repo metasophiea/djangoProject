@@ -1,12 +1,39 @@
-{% extends "account/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% load i18n %}
+<head>
+    <title>verification email sent - metasophiea</title>
+	<meta charset="utf-8">
 
-{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-{% block content %}
-    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+    <script>   
+    </script>
 
-    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
+    <style>
+        html{ font-family: Raleway; }
+        h1{ margin: 0px 0px 5px 0px; }
+        .formInputCheckBox{ margin:5px; font-size: 14px; }
+        #resetPasswordLink{ font-size: 14px; }
+        .card{
+            text-align:center;
+            width: 320px;
+            margin: auto;
+            padding: 10px;
+            background-color: rgb(243, 242, 242);
+        }
+    </style>
 
-{% endblock %}
+</head>
+
+<body>
+
+    <section class='card'>
+        <h1>Verify Your E-mail Address</h1>
+        <p>An e-mail has been sent to you for verification. Follow the link provided to finalize the signup process.</p>
+    </section> 
+
+    {% include 'messageview.html' %}
+
+</body>
+</html>
