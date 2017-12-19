@@ -7,6 +7,7 @@ import allauth.account.views
 import newCode
 
 urlpatterns = [
+	# Main adin address
 	url(r'^admin/', admin.site.urls),
 
 
@@ -27,6 +28,8 @@ urlpatterns = [
 	url(r"^confirmEmail/$", allauth.account.views.email_verification_sent, name="account_email_verification_sent"), # verification_sent.html
     url(r'^manageEmail/', allauth.account.views.email, name='account_email'), # email.html
 
+
+	# Other addresses
 	url(r'^profile/', views.profile.main, name='profile'),
 	url(r'^submitTweet/', views.profile.submitTweet, name='submitTweet'),
 
@@ -36,5 +39,8 @@ urlpatterns = [
 	url(r'^newCode/', include('newCode.urls')),
 
 	url(r'^tweetData/', views.data.getTweets),
+
+
+	# Landing page
 	url(r'^$', views.main.index)
 ]
