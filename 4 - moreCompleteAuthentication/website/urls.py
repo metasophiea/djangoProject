@@ -12,7 +12,7 @@ urlpatterns = [
 
 
 	# Authentication addresses
-	url(r'^account/', include('allauth.urls')), # still need to cover provider login
+	url(r'^account/', include('allauth.urls')), # still needed to cover provider login
 		#
 	url(r'^signup/', allauth.account.views.signup, name='account_signup'), #signup.html
 	url(r'^login/', allauth.account.views.login, name='account_login'), # login.html
