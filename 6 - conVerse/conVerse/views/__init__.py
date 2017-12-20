@@ -1,1 +1,1 @@
-from . import index, profile, verse
+from . import index, profile, verse, api_getVerse

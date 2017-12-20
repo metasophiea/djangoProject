@@ -29,9 +29,13 @@ urlpatterns = [
 
 
 	# Other addresses
+	url(r'^verseData/(?P<start>(\d+))/(?P<end>(\d+))/$', views.api_getVerse.getVerse),
+	url(r'^verseData/(?P<index>(\d+))/$', views.api_getVerse.getVerse),
+	url(r'^verseData/$', views.api_getVerse.getVerse, name='api_verseData'),
+
 	url(r'^profile/', views.profile.profile),
 	url(r'^verse/', views.verse.verse),
 
 	# Landing page
-	url(r'^', views.index.index)
+	url(r'^$', views.index.index)
 ]

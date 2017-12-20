@@ -1,0 +1,48 @@
+import django, json
+from .. import models
+
+def safeInt(val):
+	try:    return int(val)
+	except: return None
+
+def getVerseData(limit, index=None, start=None, end=None):
+    basicQuery = models.verse.verse.objects
+
+    # perform the correct query depending on what arguments were used
+    if index is not None:
+    	# get one specific tweet
+    	items = basicQuery.filter(verseId__gte=index, verseId__lte=index)
+    elif start is None and end is None:
+    	# get first 'limit' tweets
+    	items = basicQuery.filter(verseId__gte=0, verseId__lte=limit)
+    elif start is not None and end is None:
+    	# get the tweets after and including start
+    	items = basicQuery.filter(verseId__gte=start, verseId__lte=(start+limit))
+    elif start is None and end is not None:
+    	# get the tweets before and including end 
+    	items = basicQuery.filter(verseId__gte=(end-limit), verseId__lte=end)
+    else:
+    	# get the tweets between and including start and end
+    	items = basicQuery.filter(verseId__gte=start, verseId__lte=(end if end <= (start+limit) else (start+limit)))    
+
+    return items.select_related('allauthUser__userdata')
+
+def getVerse(request, index=None, start=None, end=None):
+    limit = 10
+
+    outputArray = []
+    objectMould = {
+    	'username':'',
+    	'screenname':'',
+    	'position':'',
+    	'text':'',
+    }
+    for item in getVerseData(limit, safeInt(index), safeInt(start), safeInt(end)):
+        tempObject = dict(objectMould)
+        tempObject['username'] = item.allauthUser.username
+        tempObject['screenname'] = item.allauthUser.userdata.screenname
+        tempObject['position'] = item.position
+        tempObject['text'] = item.text
+        outputArray.append(tempObject)  
+
+    return django.http.HttpResponse( json.dumps(outputArray) )

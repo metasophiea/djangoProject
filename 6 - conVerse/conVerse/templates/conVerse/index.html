@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>metasophiea</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script>
+        function dealWithData(data){
+            for(var a = 0; a < data.length; a++){
+                p = document.createElement("p");
+                p.innerHTML += data[a].text;
+                p.innerHTML += "<br/>";
+                p.innerHTML += "- " + data[a].screenname;
+                p.innerHTML += " (" + data[a].username + ")";
+                document.body.appendChild(p);
+            }
+        }
+
+		function go(){
+		    $.getJSON( "{% url 'api_verseData' %}", dealWithData );
+		}
+	</script>
+	<style>
+		p{
+			background-color: #ffbb7c;
+		}
+	</style>
+</head>
+
+<body onLoad="go()">
+	<h1>Hello</h1>
+</body>
+</html>

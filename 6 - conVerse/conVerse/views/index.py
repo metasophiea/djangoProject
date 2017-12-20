@@ -4,4 +4,6 @@ from django.shortcuts import render
 def index(request):
 	print("Main page hit from user: " + str(request.user))
 
-	return django.http.HttpResponse( "- the site -" )
+	template = django.template.loader.get_template('conVerse/index.html')
+	context = {}
+	return django.http.HttpResponse(template.render(context, request))
