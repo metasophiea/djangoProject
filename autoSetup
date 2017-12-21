@@ -62,7 +62,7 @@ echo; echo -------- Setting up a Django project and loading website code -------
 django-admin startproject website
 
 # copy site code into website folder
-cp -r /djangoProject/"4 - moreCompleteAuthentication"/* /website
+cp -r /djangoProject/"6 - conVerse"/* /website
 
 # run the makemigrations function in django (probably useless)
 python3 /website/manage.py makemigrations
@@ -77,7 +77,7 @@ python3 /website/manage.py collectstatic
 sed -i -e "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \['$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')'\]/g" website/website/settings.py
 # create the superuser 'root'
 /usr/bin/expect << END
-        spawn python3 website/manage.py createsuperuser
+        spawn python3 /website/manage.py createsuperuser
         expect "Username (leave blank to use 'root'): "
         send "\r"
         expect "Email address: "
