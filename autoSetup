@@ -66,8 +66,8 @@ cp -r /djangoProject/"6 - conVerse"/* /website
 
 # run the makemigrations function in django (probably useless)
 python3 /website/manage.py makemigrations
-# run the makemigrations function in relation to the 'newTwitter' app
-python3 /website/manage.py makemigrations newTwitter
+# run the makemigrations function in relation to the 'conVerse' app
+python3 /website/manage.py makemigrations conVerse
 # tell django to set itself up in the database
 python3 /website/manage.py migrate
 # tell django to collect all of the static content into the directory location we configured
