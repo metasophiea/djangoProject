@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 
 class verse(models.Model):
-    allauthUser = models.ForeignKey(settings.AUTH_USER_MODEL)
+    allauthUser = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     verseId = models.AutoField(primary_key=True)
     position = models.IntegerField(default=0)
     text = models.CharField(max_length=100, blank=True)
