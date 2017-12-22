@@ -73,7 +73,7 @@ python3 /website/manage.py migrate
 # tell django to collect all of the static content into the directory location we configured
 python3 /website/manage.py collectstatic
 
-# add ip address to allowed hosts (attempts to find this automatically)
+# add ip address to allowed hosts (attempts to find this automatically, will do so poorly so you need to check this)
 sed -i -e "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \['$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')'\]/g" website/website/settings.py
 # create the superuser 'root'
 /usr/bin/expect << END
