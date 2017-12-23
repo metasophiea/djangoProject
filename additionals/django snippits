@@ -10,6 +10,13 @@ gather all django setting names:
 Location of allauth code:
     /usr/local/lib/python3.5/dist-packages/allauth
 
+Monitor Database Queries
+    from django.db import connection
+    
+    print(len(connection.queries))
+    for a in connection.queries:
+        print(a)
+
 The allauth url patterns:
     urlpatterns = [
         url(r"^signup/$", views.signup, name="account_signup"),

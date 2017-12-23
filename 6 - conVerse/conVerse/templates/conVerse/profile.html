@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>metasophiea</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script>
+	</script>
+	<style>
+		p{
+			background-color: #ffbb7c;
+		}
+	</style>
+</head>
+
+<body>
+    <h1>Profile</h1>
+
+    {{ user.username }}
+    
+    <a href='/logout'>logout</a>
+    <a href='/changePassword'>password</a>
+    <a href='/manageEmail'>email</a>
+    <a href='/deleteAccount'>deleteAccount</a>
+
+    <form class="updateScreenname" method="POST" action="{% url 'api_updateScreenname' %}">
+        {% csrf_token %}
+        <div>
+            screenname<input id='screenname' type='text' name='screenname' value="{{ userdata.screenname }}"/>
+        </div>
+
+    </form>
+
+    <form class="updateVerse" method="POST" action="{% url 'api_updateVerse' %}">
+        {% csrf_token %}
+        <div>
+            verse<input id='verseText' type='text' name='verseText' value='{{ verse }}'/>
+        </div>
+    </form>
+
+    <form class="updateVersePosition" method="POST" action="{% url 'api_updateVersePosition' %}">
+        {% csrf_token %}
+        <button class='button' type='submit' name='update'>Update Verse Position</button>
+     </form>
+
+</body>
+</html>

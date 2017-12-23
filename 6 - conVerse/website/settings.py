@@ -9,7 +9,7 @@ SECRET_KEY = '6*4$_taj=v6^1pa^c69vddq12+1x(8kgstr6izblpzi2@q7-6)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.122.33']
+ALLOWED_HOSTS = ['192.168.1.15']
 
 # Emails that the system wants to send, are printed to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

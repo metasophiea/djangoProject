@@ -5,7 +5,7 @@ class verse(models.Model):
     allauthUser = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     verseId = models.AutoField(primary_key=True)
     position = models.IntegerField(default=0)
-    text = models.CharField(max_length=100, blank=True)
+    text = models.CharField(max_length=1000, blank=True)
     upVotes = models.IntegerField(default=0)
     downVotes = models.IntegerField(default=0)
 

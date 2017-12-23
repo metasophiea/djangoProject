@@ -8,11 +8,7 @@
 
 	<script>
         function dealWithData(data){
-			// sort data by their 'position's
-			data.sort(function (a, b) { return a.position - b.position; });
-			data.sort();
-
-			// push verses
+			// push verse
             for(var a = 0; a < data.length; a++){
                 p = document.createElement("p");
                 p.innerHTML += data[a].text;
@@ -24,17 +20,8 @@
         }
 
 		function go(){
-			var radius = 5;
-			var index = parseInt(window.location.pathname.toString().replace(/\//g, ''));
-			index = isNaN(index) ? 0 : index;
-
-			var lower = index-radius;
-			var higher = index+radius;
-			if(lower < 0){
-				higher = higher - lower;
-				lower = 0;
-			}
-			$.getJSON( "{% url 'api_verseData' %}" + lower + "/" + higher + "/", dealWithData );
+			var index = (window.location.pathname.toString().split('/')[2]);
+			$.getJSON( "{% url 'api_verseData' %}" + index + "/", dealWithData );
 		}
 	</script>
 	<style>

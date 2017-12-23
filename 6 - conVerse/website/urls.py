@@ -3,10 +3,11 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 import allauth.account.views
 
+from . import views as extraAuthViews
 from conVerse import views
 
 urlpatterns = [
-	# Main adin address
+	# Main admin address
 	url(r'^admin/', admin.site.urls),
 
 
@@ -26,6 +27,7 @@ urlpatterns = [
 	url(r"^confirmEmail/(?P<key>[-:\w]+)/$", allauth.account.views.confirm_email, name="account_confirm_email"), # email_confirm.html
 	url(r"^confirmEmail/$", allauth.account.views.email_verification_sent, name="account_email_verification_sent"), # verification_sent.html
     url(r'^manageEmail/', allauth.account.views.email, name='account_email'), # email.html
+    url(r'^deleteAccount/', extraAuthViews.deleteAccount.deleteAccount, name='account_email'), # account_delete.html (this is an addition)
 
 
 	# Other addresses
@@ -33,9 +35,15 @@ urlpatterns = [
 	url(r'^verseData/(?P<index>(\d+))/$', views.api_getVerse.getVerse),
 	url(r'^verseData/$', views.api_getVerse.getVerse, name='api_verseData'),
 
-	url(r'^profile/', views.profile.profile),
-	url(r'^verse/', views.verse.verse),
+	url(r'^updateScreenname/$', views.api_updateUserdata.api_updateScreenname, name='api_updateScreenname'),
+	url(r'^updateVersePosition/$', views.api_updateVerse.api_updatePosition, name='api_updateVersePosition'),
+	url(r'^updateVerse/$', views.api_updateVerse.api_updateVerse, name='api_updateVerse'),
+
+	url(r'^profile/', views.profile.profile, name='profile'),
+	url(r'^verse/(?P<index>(\d+))/$', views.verse.verse),
+
 
 	# Landing page
+	url(r'^(?P<index>(\d+))/$', views.index.index),
 	url(r'^$', views.index.index)
 ]

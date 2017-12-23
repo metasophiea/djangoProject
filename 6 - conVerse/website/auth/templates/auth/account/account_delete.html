@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>delete account - metasophiea</title>
+    <meta charset="utf-8"></meta>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <style>
+        html{ font-family: Raleway; }
+        h1{ margin: 0px; }
+        p{
+            margin: 10px 0px;
+            padding: 0px 20px;
+        }
+        .errors{ 
+            color: red;
+            font-size: 13px;
+        }
+        .card{
+            text-align:center;
+            width: 320px;
+            margin: auto;
+            padding: 10px;
+            background-color: rgb(243, 242, 242);
+          }
+    </style>    
+</head>
+
+<body>
+
+    <section class='card'>
+        <h1>Delete Account</h1>
+        <p>Are you sure?</p>
+        <form method="POST" action="/deleteAccount/">
+            {% csrf_token %}
+            <button class='button' type='submit' name='deleteAccountConfirmation'>Yeap, pretty sure</button>
+        </form>
+    </section>
+    
+    {% include 'messageview.html' %}
+
+</body>
+</html>

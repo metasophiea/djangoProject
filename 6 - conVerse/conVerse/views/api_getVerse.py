@@ -10,20 +10,22 @@ def getVerseData(limit, index=None, start=None, end=None):
 
     # perform the correct query depending on what arguments were used
     if index is not None:
-    	# get one specific tweet
-    	items = basicQuery.filter(verseId__gte=index, verseId__lte=index)
+    	# get one specific verse
+    	items = basicQuery.filter(position__gte=index, position__lte=index)
     elif start is None and end is None:
-    	# get first 'limit' tweets
-    	items = basicQuery.filter(verseId__gte=0, verseId__lte=limit)
+    	# get first 'limit' verses
+    	items = basicQuery.filter(position__gte=0, position__lte=limit)
     elif start is not None and end is None:
-    	# get the tweets after and including start
-    	items = basicQuery.filter(verseId__gte=start, verseId__lte=(start+limit))
+    	# get the verses after and including start
+    	items = basicQuery.filter(position__gte=start, position__lte=(start+limit))
     elif start is None and end is not None:
-    	# get the tweets before and including end 
-    	items = basicQuery.filter(verseId__gte=(end-limit), verseId__lte=end)
+    	# get the verses before and including end 
+    	items = basicQuery.filter(position__gte=(end-limit), position__lte=end)
     else:
-    	# get the tweets between and including start and end
-    	items = basicQuery.filter(verseId__gte=start, verseId__lte=(end if end <= (start+limit) else (start+limit)))    
+    	# get the verses between and including start and end
+        if end < start or end > (start+limit):
+            end = (start+limit)
+        items = basicQuery.filter(position__gte=start, position__lte=end)    
 
     return items.select_related('allauthUser__userdata')
 
