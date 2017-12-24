@@ -31,9 +31,9 @@ urlpatterns = [
 
 
 	# Other addresses
-	url(r'^verseData/(?P<start>(\d+))/(?P<end>(\d+))/$', views.api_getVerse.getVerse),
-	url(r'^verseData/(?P<index>(\d+))/$', views.api_getVerse.getVerse),
-	url(r'^verseData/$', views.api_getVerse.getVerse, name='api_verseData'),
+	url(r'^verseData/(?P<start>(\d+))/(?P<end>(\d+))/$', views.api_getVerse.api_getVerse),
+	url(r'^verseData/(?P<index>(\d+))/$', views.api_getVerse.api_getVerse),
+	url(r'^verseData/$', views.api_getVerse.api_getVerse, name='api_verseData'),
 
 	url(r'^updateScreenname/$', views.api_updateUserdata.api_updateScreenname, name='api_updateScreenname'),
 	url(r'^updateVersePosition/$', views.api_updateVerse.api_updatePosition, name='api_updateVersePosition'),

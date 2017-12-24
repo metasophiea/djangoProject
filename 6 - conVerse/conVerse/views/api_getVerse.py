@@ -29,7 +29,7 @@ def getVerseData(limit, index=None, start=None, end=None):
 
     return items.select_related('allauthUser__userdata')
 
-def getVerse(request, index=None, start=None, end=None):
+def api_getVerse(request, index=None, start=None, end=None):
     limit = 10
 
     outputArray = []
