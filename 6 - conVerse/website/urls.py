@@ -6,6 +6,11 @@ import allauth.account.views
 from . import views as extraAuthViews
 from conVerse import views
 
+handler400 = 'conVerse.views.pageError.handler400' # bad request
+handler403 = 'conVerse.views.pageError.handler403' # permission denied
+handler404 = 'conVerse.views.pageError.handler404' # page not found
+handler500 = 'conVerse.views.pageError.handler500' # internal server error
+
 urlpatterns = [
 	# Main admin address
 	url(r'^admin/', admin.site.urls),
@@ -27,7 +32,7 @@ urlpatterns = [
 	url(r"^confirmEmail/(?P<key>[-:\w]+)/$", allauth.account.views.confirm_email, name="account_confirm_email"), # email_confirm.html
 	url(r"^confirmEmail/$", allauth.account.views.email_verification_sent, name="account_email_verification_sent"), # verification_sent.html
     url(r'^manageEmail/', allauth.account.views.email, name='account_email'), # email.html
-    url(r'^deleteAccount/', extraAuthViews.deleteAccount.deleteAccount, name='account_delete'), # account_delete.html (this is an addition)
+    url(r'^deleteAccount/$', extraAuthViews.deleteAccount.deleteAccount, name='account_delete'), # account_delete.html (this is an addition)
 
 
 	# Other addresses
@@ -39,7 +44,7 @@ urlpatterns = [
 	url(r'^updateVersePosition/$', views.api_updateVerse.api_updatePosition, name='api_updateVersePosition'),
 	url(r'^updateVerse/$', views.api_updateVerse.api_updateVerse, name='api_updateVerse'),
 
-	url(r'^profile/', views.profile.profile, name='profile'),
+	url(r'^profile/$', views.profile.profile, name='profile'),
 	url(r'^verse/(?P<index>(\d+))/$', views.verse.verse),
 
 
