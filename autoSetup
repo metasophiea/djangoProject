@@ -7,6 +7,8 @@ apt -y install openssh-server nano cron net-tools expect # ssh, nano, cron, ifco
 echo; echo -------- Installing Apache and Mod_WSGI --------; echo;
 apt -y install apache2 libapache2-mod-wsgi-py3
 # setup apache to use wsgi and connect to django
+# (if this script is ran multiple times, it will print all this text multiple times. So
+# one should check that it only appears once in the file before starting apache)
 sed -i.bak '2i\
         Alias /static /website/static\
         <Directory /website/static>\
