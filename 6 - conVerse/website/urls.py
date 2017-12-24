@@ -27,7 +27,7 @@ urlpatterns = [
 	url(r"^confirmEmail/(?P<key>[-:\w]+)/$", allauth.account.views.confirm_email, name="account_confirm_email"), # email_confirm.html
 	url(r"^confirmEmail/$", allauth.account.views.email_verification_sent, name="account_email_verification_sent"), # verification_sent.html
     url(r'^manageEmail/', allauth.account.views.email, name='account_email'), # email.html
-    url(r'^deleteAccount/', extraAuthViews.deleteAccount.deleteAccount, name='account_email'), # account_delete.html (this is an addition)
+    url(r'^deleteAccount/', extraAuthViews.deleteAccount.deleteAccount, name='account_delete'), # account_delete.html (this is an addition)
 
 
 	# Other addresses
