@@ -22,9 +22,7 @@ def handler404(request, exception):
     context = {}
     return django.http.HttpResponseNotFound(template.render(context, request))
 
-def handler500(request, exception):
-	print("500 page hit from user: " + str(request.user))
-
+def handler500(exception):
 	template = django.template.loader.get_template('conVerse/errorPages/500.html')
 	context = {}
-	return django.http.HttpResponseServerError(template.render(context, request))
+	return django.http.HttpResponseServerError(template.render(context))

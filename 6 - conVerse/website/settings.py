@@ -7,21 +7,26 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6*4$_taj=v6^1pa^c69vddq12+1x(8kgstr6izblpzi2@q7-6)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.2']
+ALLOWED_HOSTS = ['192.168.1.16']
 
 ADMINS = [('Brandon', 'metasophiea@gmail.com')]
 
 # Emails that the system wants to send, are printed to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-# DEFAULT_FROM_EMAIL = 'brandon@metasophiea.com'
+# DEFAULT_FROM_EMAIL = 'conVerse@metasophiea.com'
 # ßEMAIL_HOST = '127.0.0.1'
 # EMAIL_HOST_USER = ''
 # EMAIL_HOST_PASSWORD = ''
 # EMAIL_PORT = 25
 
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+#SECURE_SSL_REDIRECT = True
+#CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
