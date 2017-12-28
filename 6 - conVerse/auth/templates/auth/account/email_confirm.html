@@ -13,19 +13,8 @@
         }
     </script>
 
-    <style>
-        html{ font-family: Raleway; }
-        h1{ margin: 0px 0px 5px 0px; }
-        .formInputCheckBox{ margin:5px; font-size: 14px; }
-        #resetPasswordLink{ font-size: 14px; }
-        .card{
-            text-align:center;
-            width: 320px;
-            margin: auto;
-            padding: 10px;
-            background-color: rgb(243, 242, 242);
-        }
-    </style>
+    {% load static from staticfiles  %}
+    <link rel="stylesheet" href="{% static "auth/css/main.css" %}">
 
 </head>
 

@@ -7,7 +7,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-  {% load i18n %}
+  {% load static from staticfiles  %}
   {% load account socialaccount %}
   {% get_providers as socialaccount_providers %}
 
@@ -38,24 +38,13 @@
   
   </script>
 
-<link rel="stylesheet" href="/static/css/main.css">
-  <style>
-    html{ font-family: Raleway; }
-    h1{ margin: 0px 0px 5px 0px; }
-    .formInputCheckBox{ margin:5px; font-size: 14px; }
-    #resetPasswordLink{ font-size: 14px; }
-    /* .card{
-      text-align:center;
-      width: 320px;
-      margin: auto;
-      padding: 10px;
-      background-color: rgb(243, 242, 242);
-    } */
-  </style>
+<link rel="stylesheet" href="{% static "auth/css/main.css" %}">
 
 </head>
 
 <body onLoad="go()">
+
+  {{ static }}
 
   <section id='loginCard' class='card'>
     <h1 class='mainTitle'>Login</h1>

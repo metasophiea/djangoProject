@@ -1,7 +1,19 @@
+html{ font-family: Raleway; }
+h1{ margin: 0px 0px 5px 0px; }
+
 .card{
-    text-align:center;
-    width: 320px;
-    margin: auto;
-    padding: 10px;
-    background-color: rgb(243, 242, 242);
-  }
+  text-align:center;
+  width: 320px;
+  margin: auto;
+  padding: 10px;
+  background-color: rgb(243, 242, 242);
+}
+.errors{ 
+  color: red;
+  font-size: 13px;
+}
+.regularAction{background-color: rgb(216, 229, 238);}
+.dangerAction{background-color: rgb(238, 209, 209);}
+.formInputCheckBox{ margin:5px; font-size: 14px; }
+
+#resetPasswordLink{ font-size: 14px; }

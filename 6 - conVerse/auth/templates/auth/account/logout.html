@@ -10,10 +10,9 @@
       document.getElementById("signoutForm").submit(); 
     }
   </script>
-    
-  <style>
-    html{ font-family: Raleway; }
-  </style>
+  
+  {% load static from staticfiles  %}
+  <link rel="stylesheet" href="{% static "auth/css/main.css" %}">
 
 </head>
 
