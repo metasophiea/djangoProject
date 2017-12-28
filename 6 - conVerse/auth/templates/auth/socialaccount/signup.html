@@ -2,40 +2,19 @@
 <html lang="en">
 
 <head>
-  <title>signup - metasophiea</title>
+  <title>socialsignup - metasophiea</title>
   <meta charset="utf-8"></meta>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
-  <style>
-    html{ font-family: Raleway; }
-    h1{ margin: 0px 0px 5px 0px; }
-    .errors{ 
-      color: red;
-      font-size: 13px;
-    }
-    #signupCard{
-      text-align:center;
-      width: 320px;
-      margin: auto;
-      padding: 10px;
-      background-color: rgb(243, 242, 242);
-    }
-
-    #providerCard{
-      text-align:center;
-      width: 320px;
-      margin: auto;
-      padding: 10px;
-      background-color: rgb(243, 242, 242);
-    }
-  </style>
+  {% load static from staticfiles  %}
+  <link rel="stylesheet" href="{% static "auth/css/main.css" %}">
 </head>
 
 <body onLoad="go()">
 
-  <section id='signupCard'>
+  <section id='signupCard' class='card'>
     <h1 class='mainTitle'>SignUp</h1>
+    <p>So, an odd thing has happened here;</p>
 
     <form class="signup" method="post" action="{% url 'socialaccount_signup' %}">
       {% csrf_token %}

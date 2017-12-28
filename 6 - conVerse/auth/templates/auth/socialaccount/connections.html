@@ -1,54 +1,80 @@
-{% extends "socialaccount/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% load i18n %}
+<head>
+  <title>socialConnections - metasophiea</title>
+    <meta charset="utf-8">
+    
+    {% load static from staticfiles  %}
+    {% load account socialaccount %}
+    {% get_providers as socialaccount_providers %}
 
-{% block head_title %}{% trans "Account Connections" %}{% endblock %}
+	<script>
+        var providers = [
+        {% for provider in socialaccount_providers %}
+            { 
+              "name": "{{provider.name}}",
+              "id":"{{provider.id}}",
+              "provider_login_url": "{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}",
+            },
+          {% endfor %}
+        ];
+    
+        function go(){
+          for(var a = 0; a < providers.length; a++){
+            console.log(providers[a]);
+    
+            element = document.createElement('a');
+            element.title = providers[a].name;
+            element.class = "socialaccount_provider" + providers[a].id;
+            element.href = providers[a].provider_login_url;
+            element.innerHTML = providers[a].name;
+    
+            document.getElementById('providerLoginCard').appendChild( element );
+          }
+        }
+      </script>
 
-{% block content %}
-<h1>{% trans "Account Connections" %}</h1>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "auth/css/main.css" %}">
 
-{% if form.account %}
-<p>{% blocktrans %}You can sign in to your account using any of the following third party accounts:{% endblocktrans %}</p>
+</head>
 
+<body onLoad="go()">
 
-<form method="post" action="{% url 'socialaccount_connections' %}">
-{% csrf_token %}
+  <section class='card'>
+    <h1 class='mainTitle'>Account Connections</h1>
+    <p>Here are all the accounts that are hooked into your account</p>
 
-<fieldset>
-{% if form.non_field_errors %}
-<div id="errorMsg">{{ form.non_field_errors }}</div>
-{% endif %}
+    <form method="post" action="{% url 'socialaccount_connections' %}">
+        {% csrf_token %}
+        {% for base_account in form.accounts %}
+            <div>
+                <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>{{base_account.get_provider_account.get_brand.name}} - "{{ base_account.get_provider_account }}"
+            </div>
+        {% endfor %}
+            
+        <div>
+            <button type="submit" class='dangerAction'>Remove</button>
+            Be very careful with this
+        </div>
+    </form>
 
-{% for base_account in form.accounts %}
-{% with base_account.get_provider_account as account %}
-<div>
-<label for="id_account_{{ base_account.id }}">
-<input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>
-<span class="socialaccount_provider {{ base_account.provider }} {{ account.get_brand.id }}">{{account.get_brand.name}}</span>
-{{ account }}
-</label>
-</div>
-{% endwith %}
-{% endfor %}
+    <div class='errors'>
+        {% if form.non_field_errors %}{% for field in form.non_field_errors %}
+            <p>{{ field }}</p>
+        {% endfor %}{% endif %}
+    </div> 
 
-<div>
-<button type="submit">{% trans 'Remove' %}</button>
-</div>
+  </section> 
 
-</fieldset>
+  <br/>
 
-</form>
+  <section id='providerLoginCard' class='card'>
+      <h1 class='mainTitle'>Try to attach:</h1>
+  </section>
 
-{% else %}
-<p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
-{% endif %}
+  {% include 'messageview.html' %}
 
-<h2>{% trans 'Add a 3rd Party Account' %}</h2>
-
-<ul class="socialaccount_providers">
-{% include "socialaccount/snippets/provider_list.html" with process="connect" %}
-</ul>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% endblock %}
+</body>
+</html>
