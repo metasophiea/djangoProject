@@ -1,22 +1,71 @@
-{% extends "socialaccount/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% load i18n %}
+<head>
+  <title>signup - metasophiea</title>
+  <meta charset="utf-8"></meta>
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-{% block content %}
-    <h1>{% trans "Sign Up" %}</h1>
+  <style>
+    html{ font-family: Raleway; }
+    h1{ margin: 0px 0px 5px 0px; }
+    .errors{ 
+      color: red;
+      font-size: 13px;
+    }
+    #signupCard{
+      text-align:center;
+      width: 320px;
+      margin: auto;
+      padding: 10px;
+      background-color: rgb(243, 242, 242);
+    }
 
-<p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
-{{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
+    #providerCard{
+      text-align:center;
+      width: 320px;
+      margin: auto;
+      padding: 10px;
+      background-color: rgb(243, 242, 242);
+    }
+  </style>
+</head>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+<body onLoad="go()">
 
-{% endblock %}
+  <section id='signupCard'>
+    <h1 class='mainTitle'>SignUp</h1>
+
+    <form class="signup" method="post" action="{% url 'socialaccount_signup' %}">
+      {% csrf_token %}
+
+      <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" minlength="1" maxlength="150" autofocus="autofocus" placeholder="username" required id="id_username" />
+      <div class='errors'>
+          {% if form.username.errors %}{% for field in form.username.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+      
+      <input type="email" name="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" placeholder="E-mail address" id="id_email" />
+      <div class='errors'>
+          {% if form.email.errors %}{% for field in form.email.errors %}
+            <p>{{ field }}</p>
+          {% endfor %}{% endif %}
+      </div> 
+
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+
+      <button type="submit">Complete Signup</button>
+    </form>
+
+  </section> 
+
+  <br/>
+
+  {% include 'messageview.html' %}
+  
+</body>
+</html>
