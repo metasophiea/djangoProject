@@ -15,7 +15,7 @@
             { 
               "name": "{{provider.name}}",
               "id":"{{provider.id}}",
-              "provider_login_url": "{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}",
+              "provider_login_url": "{% provider_login_url provider.id process='connect' scope=scope auth_params=auth_params %}",
             },
           {% endfor %}
         ];
@@ -42,39 +42,39 @@
 
 <body onLoad="go()">
 
-  <section class='card'>
-    <h1 class='mainTitle'>Account Connections</h1>
-    <p>Here are all the accounts that are hooked into your account</p>
+    <section class='card'>
+        <h1 class='mainTitle'>Account Connections</h1>
+        <p>Here are all the accounts that are hooked into your account</p>
 
-    <form method="post" action="{% url 'socialaccount_connections' %}">
-        {% csrf_token %}
-        {% for base_account in form.accounts %}
+        <form method="post" action="{% url 'socialaccount_connections' %}">
+            {% csrf_token %}
+            {% for base_account in form.accounts %}
+                <div>
+                    <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>{{base_account.get_provider_account.get_brand.name}} - "{{ base_account.get_provider_account }}"
+                </div>
+            {% endfor %}
+                
             <div>
-                <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>{{base_account.get_provider_account.get_brand.name}} - "{{ base_account.get_provider_account }}"
+                <button type="submit" class='dangerAction'>Remove</button>
+                Be very careful with this
             </div>
-        {% endfor %}
-            
-        <div>
-            <button type="submit" class='dangerAction'>Remove</button>
-            Be very careful with this
-        </div>
-    </form>
+        </form>
 
-    <div class='errors'>
-        {% if form.non_field_errors %}{% for field in form.non_field_errors %}
-            <p>{{ field }}</p>
-        {% endfor %}{% endif %}
-    </div> 
+        <div class='errors'>
+            {% if form.non_field_errors %}{% for field in form.non_field_errors %}
+                <p>{{ field }}</p>
+            {% endfor %}{% endif %}
+        </div> 
 
-  </section> 
+    </section> 
 
-  <br/>
+    <br/>
 
-  <section id='providerLoginCard' class='card'>
-      <h1 class='mainTitle'>Try to attach:</h1>
-  </section>
+    <section id='providerLoginCard' class='card'>
+        <h1 class='mainTitle'>Try to attach:</h1>
+    </section>
 
-  {% include 'messageview.html' %}
+    {% include 'messageview.html' %}
 
 </body>
 </html>
