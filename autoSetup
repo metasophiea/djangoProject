@@ -64,7 +64,7 @@ echo; echo -------- Setting up a Django project and loading website code -------
 django-admin startproject website
 
 # copy site code into website folder
-cp -r /djangoProject/"6 - conVerse"/* /website
+cp -r /djangoProject/"website"/* /website
 
 # run the makemigrations function in django (probably useless)
 python3 /website/manage.py makemigrations
