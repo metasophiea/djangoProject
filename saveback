@@ -12,7 +12,7 @@ echo ""
 echo "- Copying in new data"
 cp -r /website/* /djangoProject/"$*"/
 echo "(removing 'static' folder)"
-rm -r /djangoProject/"$*"/static
+rm -r /djangoProject/"$*"static
 echo ""
 
 echo "Done"

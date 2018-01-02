@@ -2,36 +2,29 @@
 <html lang="en">
 
 <head>
-	<title>metasophiea</title>
+	<title>continuousVerse</title>
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-	<script>
-        function dealWithData(data){
-			// push verse
-            for(var a = 0; a < data.length; a++){
-                p = document.createElement("p");
-                p.innerHTML += data[a].text;
-                p.innerHTML += "<br/>";
-                p.innerHTML += data[a].position + " - " + data[a].screenname;
-                p.innerHTML += " (" + data[a].username + ")";
-                document.body.appendChild(p);
-            }
-        }
+    {% load static from staticfiles  %}
+	<script src="{% static "conVerse/js/main.js" %}"></script>
+	
+    <link rel="stylesheet" href="{% static "conVerse/css/main.css" %}">
+    <link rel="stylesheet" href="{% static "conVerse/css/verse.css" %}">
 
+	<script>
 		function go(){
 			var index = (window.location.pathname.toString().split('/')[2]);
-			$.getJSON( "{% url 'api_verseData' %}" + index + "/", dealWithData );
+			$.getJSON(
+				"{% url 'api_verseData' %}" + index + "/",
+				function(data){
+					dealWithData(data, document.body);
+				}
+			);
 		}
 	</script>
-	<style>
-		p{
-			background-color: #ffbb7c;
-		}
-	</style>
 </head>
 
 <body onLoad="go()">
-	<h1>Hello</h1>
 </body>
 </html>

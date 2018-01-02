@@ -2,49 +2,45 @@
 <html lang="en">
 
 <head>
-	<title>metasophiea</title>
+	<title>profile - continuousVerse</title>
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-	<script>
-	</script>
-	<style>
-		p{
-			background-color: #ffbb7c;
-		}
-	</style>
+    {% load static from staticfiles  %}
+    <link rel="stylesheet" href="{% static "conVerse/css/main.css" %}">
+    <link rel="stylesheet" href="{% static "conVerse/css/profile.css" %}">
+
 </head>
 
 <body>
-    <h1>Profile</h1>
 
-    {{ user.username }}
-    
-    <a href='/logout'>logout</a>
-    <a href='/changePassword'>password</a>
-    <a href='/manageEmail'>email</a>
-    <a href='/deleteAccount'>deleteAccount</a>
-    <a href='/socialConnections'>socialConnections</a>
+    <header id='header'>
+        <section id='leftSection'>
+            <form id='screennameBox' method="POST" action="{% url 'api_updateScreenname' %}">
+                {% csrf_token %}
+                <input id='screenname' type='text' name='screenname' value='{{ userdata.screenname }}' placeholder='screen name' autocomplete="off"/>
+            </form>
+            <h2 id='username'>{{ user.username }}</h2>
+        </section>
 
-    <form class="updateScreenname" method="POST" action="{% url 'api_updateScreenname' %}">
+        <section id='rightSection'>
+            <a class='link' href='/manageEmail'>email</a><br/>
+            <a class='link' href='/logout'>logout</a><br/>
+            <a class='link' href='/changePassword'>password</a><br/>
+            <a class='link' href='/deleteAccount'>deleteAccount</a><br/>
+            <a class='link' href='/socialConnections'>socialConnections</a><br/>
+        </section>
+    </header>
+
+    <form id='verseBox' method="POST" action="{% url 'api_updateVerse' %}">
         {% csrf_token %}
-        <div>
-            screenname<input id='screenname' type='text' name='screenname' value="{{ userdata.screenname }}"/>
-        </div>
-
+        <input id="verse" type="text" name='verseText' maxlength="1000" value='{{ verse.text }}' placeholder='verse' autocomplete="off">
     </form>
 
-    <form class="updateVerse" method="POST" action="{% url 'api_updateVerse' %}">
+    <form id="updateVersePositionBox" method="POST" action="{% url 'api_updateVersePosition' %}">
         {% csrf_token %}
-        <div>
-            verse<input id='verseText' type='text' name='verseText' value='{{ verse }}'/>
-        </div>
+        <button id='updateVersePositionButton' type='submit' name='update'>{{ verse.position }} - attempt update</button>
     </form>
-
-    <form class="updateVersePosition" method="POST" action="{% url 'api_updateVersePosition' %}">
-        {% csrf_token %}
-        <button class='button' type='submit' name='update'>Update Verse Position</button>
-     </form>
 
 </body>
 </html>

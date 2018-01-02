@@ -1,0 +1,28 @@
+.verse{
+    margin: 0px 0px 50px 0px;
+}
+
+.verse_text{
+    margin: 0px;
+    color: #000000;
+    font-size: 20px;
+}
+.verse_authorScreenname{
+    margin: 0px 10px 0px 0px;
+    color: #666666;
+    font-size: 16px;
+    float: left;
+}
+.verse_authorUsername{
+    margin: 0px 10px 0px 0px;
+    color: #b7b7b7;
+    font-style: italic;
+    font-size: 16px;
+    float: left;
+}
+.verse_position{
+    margin: 0px 10px 0px 0px;
+    color: #b7b7b7;
+    font-size: 12px;
+    float: left;
+}
