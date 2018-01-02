@@ -9,7 +9,7 @@ SECRET_KEY = '6*4$_taj=v6^1pa^c69vddq12+1x(8kgstr6izblpzi2@q7-6)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.17']
+ALLOWED_HOSTS = ['192.168.122.15']
 
 ADMINS = [('Brandon', 'metasophiea@gmail.com')]
 
@@ -32,6 +32,7 @@ ROOT_URLCONF = 'website.urls'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Metasophiea.com - '
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
