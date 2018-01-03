@@ -15,12 +15,8 @@ class userdata(models.Model):
     def create_user_userdata(sender, instance, created, **kwargs):
         if created:
             userdata.objects.create(username=instance)
-
-    @receiver(post_save, sender=settings.AUTH_USER_MODEL)
-    def save_user_userdata(sender, instance, **kwargs):
-        instance.userdata.screenname = instance.userdata.username.username
-        instance.userdata.save()
-
+            instance.userdata.screenname = instance.userdata.username.username
+            instance.userdata.save()
 
 from django.contrib import admin
 class userdata_admin(admin.ModelAdmin):

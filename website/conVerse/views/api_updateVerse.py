@@ -27,16 +27,20 @@ def api_updatePosition(request):
 
 @login_required
 def api_updateVerse(request):
+    newText = request.POST['verseText'].replace('\n', ' ').replace('\r', '')
+
+    # make sure that the new verse isn't bigger than what the model allows
+    if len(newText) > models.verse.verse._meta.get_field('text').max_length:
+        return redirect('profile')
+
     try:
         # update verse
         verse = models.verse.verse.objects.get(allauthUser=request.user)
-        verse.text = request.POST['verseText'].replace('\n', ' ').replace('\r', '')
+        verse.text = newText
         if len(verse.text) == 0:
             verse.delete()
         else:
-            # make sure that the new verse isn't bigger than what the model allows
-            if len(verse.text) <= verse._meta.get_field('text').max_length:
-                verse.save()
+            verse.save()
     except:
         # create verse
         verse = models.verse.verse.objects.create(

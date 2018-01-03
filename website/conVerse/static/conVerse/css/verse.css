@@ -1,34 +1,35 @@
-.mainTable{
+#mainTable{
     margin: auto;
     max-width:650px;
 }
 
-.verse{}
+.verse{ margin: 0px; }
 
 .verseDetails{
     vertical-align: top;
+    padding: 0px 0px 0px 10px;
 }
 
 .verse_text{
+    margin: inherit;
     padding: 0px 0px 10px 0px;
     color: #000000;
     font-size: 20px;
     word-wrap:break-word;
-    margin: auto;
 }
 .verse_authorScreenname{
-    margin: 0px 10px 0px 0px;
+    margin: inherit;
     color: #666666;
     font-size: 16px;
 }
 .verse_authorUsername{
-    margin: 0px 10px 0px 0px;
+    margin: inherit;
     color: #b7b7b7;
-    font-style: italic;
     font-size: 16px;
+    font-style: italic;
 }
 .verse_authorPosition{
-    margin: 0px 10px 0px 0px;
+    margin: inherit;
     color: #b7b7b7;
     font-size: 12px;
 }

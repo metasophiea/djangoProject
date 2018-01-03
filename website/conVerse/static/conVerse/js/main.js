@@ -13,7 +13,7 @@ function dealWithData(data, element){
     // create table that the verses will sit in
     table = document.createElement("table");
         element.appendChild(table);
-        table.setAttribute('class','mainTable');
+        table.setAttribute('id','mainTable');
         table.setAttribute('cellspacing',0);
         table.setAttribute('cellpadding',0);
     tbody = document.createElement("tbody");
