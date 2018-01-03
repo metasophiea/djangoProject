@@ -46,7 +46,7 @@ def api_updateVerse(request):
         verse = models.verse.verse.objects.create(
             allauthUser=request.user,
             position=0,
-            text=request.POST['verseText'],
+            text=newText,
             upVotes=0,
             downVotes=0
         )

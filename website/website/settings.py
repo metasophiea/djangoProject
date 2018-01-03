@@ -4,7 +4,12 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6*4$_taj=v6^1pa^c69vddq12+1x(8kgstr6izblpzi2@q7-6)'
+try: 
+    file = open("/secretKey", "r") 
+    SECRET_KEY = file.readline().replace('\n', '')
+except:
+    print("-- Note: the secret key file was not found and this server was started using the default key instead --")
+    SECRET_KEY = '6*4$_taj=v6^1pa^c69vddq12+1x(8kgstr6izblpzi2@q7-6)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

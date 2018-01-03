@@ -9,7 +9,7 @@
 }
 #username{
     margin: 0px 0px 5px 0px;
-    color: #666666;
+    color: #888888;
     font-size: 20px;
     display: inline-block;
 }
@@ -27,12 +27,12 @@
 
 #characterCounter{
     margin: 0px 0px 5px 0px;
-    color: #666666;
+    color: #888888;
 }
 
 #updateVersePositionButton{
     border:0px; padding:0px; 
-    color: #666666;
+    color: #888888;
     background-color: rgba(0,0,0,0);
     font-size: 12px;
 }

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# == 0 ]; then
-        echo "error: loadCode requires a folder name"
+        echo "error: saveback requires a folder name"
         exit
 fi
 
