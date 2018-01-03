@@ -30,11 +30,13 @@ def api_updateVerse(request):
     try:
         # update verse
         verse = models.verse.verse.objects.get(allauthUser=request.user)
-        verse.text = request.POST['verseText']
+        verse.text = request.POST['verseText'].replace('\n', ' ').replace('\r', '')
         if len(verse.text) == 0:
             verse.delete()
         else:
-            verse.save()
+            # make sure that the new verse isn't bigger than what the model allows
+            if len(verse.text) <= verse._meta.get_field('text').max_length:
+                verse.save()
     except:
         # create verse
         verse = models.verse.verse.objects.create(

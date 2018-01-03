@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
 	<title>profile - continuousVerse</title>
-	<meta charset="utf-8">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<meta charset='utf-8'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js'></script>
 
     {% load static from staticfiles  %}
-    <link rel="stylesheet" href="{% static "conVerse/css/main.css" %}">
-    <link rel="stylesheet" href="{% static "conVerse/css/profile.css" %}">
+    <link rel='stylesheet' href='{% static 'conVerse/css/main.css' %}'>
+    <link rel='stylesheet' href='{% static 'conVerse/css/profile.css' %}'>
 
 </head>
 
 <body>
 
-    <header id='header'>
-        <section id='leftSection'>
-            <form id='screennameBox' method="POST" action="{% url 'api_updateScreenname' %}">
-                {% csrf_token %}
-                <input id='screenname' type='text' name='screenname' value='{{ userdata.screenname }}' placeholder='screen name' autocomplete="off"/>
-            </form>
-            <h2 id='username'>{{ user.username }}</h2>
-        </section>
+    <table id='header' cellpadding=0 cellspacing=0>
+        <tbody>
+            <tr>
+                <th id='leftSection'>
+                    <form id='screennameBox' method='POST' action='{% url 'api_updateScreenname' %}'>
+                        {% csrf_token %}
+                        <input id='screenname' type='text' name='screenname' maxlength='{{ screennameMaxLength }}' value='{{ userdata.screenname }}' placeholder='screen name' autocomplete='off'/>
+                    </form>
+                    <h2 id='username'>{{ user.username }}</h2>
+                </th>
+                <th id='rightSection'>
+                    <a class='link' href='/manageEmail'>email</a><br/>
+                    <a class='link' href='/logout'>logout</a><br/>
+                    <a class='link' href='/changePassword'>password</a><br/>
+                    <a class='link' href='/deleteAccount'>deleteAccount</a><br/>
+                    <a class='link' href='/socialConnections'>socialConnections</a><br/>
+                </th>
+            </tr>
+        </tbody>
+    </table> 
 
-        <section id='rightSection'>
-            <a class='link' href='/manageEmail'>email</a><br/>
-            <a class='link' href='/logout'>logout</a><br/>
-            <a class='link' href='/changePassword'>password</a><br/>
-            <a class='link' href='/deleteAccount'>deleteAccount</a><br/>
-            <a class='link' href='/socialConnections'>socialConnections</a><br/>
-        </section>
-    </header>
-
-    <form id='verseBox' method="POST" action="{% url 'api_updateVerse' %}">
+    <form id='verseBox' method='POST' action='{% url 'api_updateVerse' %}'>
         {% csrf_token %}
-        <input id="verse" type="text" name='verseText' maxlength="1000" value='{{ verse.text }}' placeholder='verse' autocomplete="off">
+        <textarea id='verse' type='text' name='verseText' maxlength='{{ verseMaxLength }}' onkeyup='document.getElementById("characterCounter").innerHTML = this.value.length + "/{{ verseMaxLength }}";' onkeydown='if(event.keyCode == 13){ this.parentElement.submit(); return false; }' placeholder='verse' autocomplete='off'>{{verse.text}}</textarea>
+        <script>autosize(document.getElementById('verse'));</script>
     </form>
 
-    <form id="updateVersePositionBox" method="POST" action="{% url 'api_updateVersePosition' %}">
+    <p id='characterCounter'>500/1000</p>
+    <script>document.getElementById("characterCounter").innerHTML = document.getElementById("verse").value.length + "/{{ verseMaxLength }}";</script>
+
+    <form id='updateVersePositionBox' method='POST' action='{% url 'api_updateVersePosition' %}'>
         {% csrf_token %}
-        <button id='updateVersePositionButton' type='submit' name='update'>{{ verse.position }} - attempt update</button>
+        <button id='updateVersePositionButton' type='submit' name='update'>position: {{ verse.position }} - attempt update</button>
     </form>
 
 </body>

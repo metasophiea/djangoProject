@@ -11,17 +11,16 @@
 
 
 #header{
-    display: inline-block;
     width:100%;
 }
 #leftSection{
+    text-align: left;
     float:left;
 }
 #rightSection{
     text-align: right;
     float:right;
 }
-
 #screenname{
     margin: 0px 0px 5px 0px;
     color: #000000;
@@ -37,15 +36,6 @@
     font-size: 20px;
     display: inline-block;
 }
-#updateVersePositionButton{
-    border:0px; padding:0px; 
-    color: #666666;
-    background-color: rgba(0,0,0,0);
-    font-size: 12px;
-}
-#updateVersePositionButton:hover{
-    color: #333333;
-}
 
 #verse{
     margin: 50px 0px 0px 0px;
@@ -54,4 +44,20 @@
     border:0px; padding:0px; 
     font-family: Raleway;
     width: 100%;
+    resize: none;
+}
+
+#characterCounter{
+    margin: 0px 0px 5px 0px;
+    color: #666666;
+}
+
+#updateVersePositionButton{
+    border:0px; padding:0px; 
+    color: #666666;
+    background-color: rgba(0,0,0,0);
+    font-size: 12px;
+}
+#updateVersePositionButton:hover{
+    color: #333333;
 }

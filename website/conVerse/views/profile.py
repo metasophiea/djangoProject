@@ -14,6 +14,8 @@ def profile(request):
 	template = django.template.loader.get_template('conVerse/profile.html')
 	context = {
 		'userdata':userdataQuery,
-		'verse':verse
+		'verse':verse,
+		'screennameMaxLength': models.userdata.userdata._meta.get_field('screenname').max_length,
+		'verseMaxLength': models.verse.verse._meta.get_field('text').max_length
 	}
 	return django.http.HttpResponse(template.render(context, request))
