@@ -13,7 +13,8 @@ handler500 = 'conVerse.views.pageError.handler500' # internal server error
 
 urlpatterns = [
 	# Main admin address
-	url(r'^admin/', admin.site.urls),
+	# url(r'^admin/', admin.site.urls),
+	url(r'^complicatedPartyTime2018/', admin.site.urls),
 
 
 	# Authentication addresses

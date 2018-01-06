@@ -12,16 +12,16 @@ except:
     SECRET_KEY = '6*4$_taj=v6^1pa^c69vddq12+1x(8kgstr6izblpzi2@q7-6)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.122.15']
+ALLOWED_HOSTS = ['178.62.111.52','metasophiea.eu','dev.metasophiea.eu']
 
 ADMINS = [('Brandon', 'metasophiea@gmail.com')]
 
 # Emails that the system wants to send, are printed to the console
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-#EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'conVerse@metasophiea.com'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'stdout@metasophiea.eu'
 EMAIL_HOST = '127.0.0.1'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
@@ -30,14 +30,14 @@ EMAIL_PORT = 25
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 #SECURE_SSL_REDIRECT = True
-#CSRF_COOKIE_SECURE = True
-#SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True # requireds HTTPS connection
+# SESSION_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
 ROOT_URLCONF = 'website.urls'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Metasophiea.com - '
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'continuousverse.metasophiea.eu - '
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
