@@ -11,10 +11,16 @@ handler403 = 'conVerse.views.pageError.handler403' # permission denied
 handler404 = 'conVerse.views.pageError.handler404' # page not found
 handler500 = 'conVerse.views.pageError.handler500' # internal server error
 
+adminAddress = 'complicatedPartyTime2018'
+try: 
+    file = open("/secret/adminAddress", "r") 
+    adminAddress = file.readline().replace('\n', '')
+except: print("-- Note: the secret admin address file was not found and this server was started using the default address instead --")
+
 urlpatterns = [
 	# Main admin address
 	# url(r'^admin/', admin.site.urls),
-	url(r'^complicatedPartyTime2018/', admin.site.urls),
+	url(r'^'+adminAddress+'/', admin.site.urls),
 
 
 	# Authentication addresses

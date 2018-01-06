@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 try: 
-    file = open("/secretKey", "r") 
+    file = open("/secret/secretKey", "r") 
     SECRET_KEY = file.readline().replace('\n', '')
 except:
     print("-- Note: the secret key file was not found and this server was started using the default key instead --")
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
 
     'conVerse.apps.conVerse_config'
 ]
