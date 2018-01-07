@@ -92,8 +92,8 @@ sed -i -e "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \['$(ifconfig eth0 2>/dev/null
         expect "Superuser created successfully."
 END
 
-echo; echo -------- Starting Django Server --------; echo;
-python3 /website/manage.py runserver 0.0.0.0:8080
+# echo; echo -------- Starting Django Server --------; echo;
+# python3 /website/manage.py runserver 0.0.0.0:8080
 
 # echo; echo -------- Starting Apache Server --------; echo;
 # /etc/init.d/apache2 start
