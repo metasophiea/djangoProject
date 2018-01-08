@@ -29,10 +29,10 @@ EMAIL_PORT = 25
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
-#SECURE_SSL_REDIRECT = True
-# CSRF_COOKIE_SECURE = True # requireds HTTPS connection
-# SESSION_COOKIE_SECURE = True
-# SECURE_HSTS_SECONDS = 3600
+# SECURE_SSL_REDIRECT = True   # requireds HTTPS connection
+# CSRF_COOKIE_SECURE = True    # requireds HTTPS connection
+# SESSION_COOKIE_SECURE = True # requireds HTTPS connection
+# SECURE_HSTS_SECONDS = 3600   # requireds HTTPS connection
 X_FRAME_OPTIONS = 'DENY'
 ROOT_URLCONF = 'website.urls'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
