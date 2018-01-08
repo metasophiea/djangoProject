@@ -53,7 +53,7 @@
 		// If enough attemps at getting more verses go with nothing returne; this process is stopped
 		var dynamicVerseRetrieval_processID = setInterval( additionalVerseRetriever, retrievalCheckTime );
 		var allowRetrieval = true;
-		var searchForMore = true; var searchInterest = 10;
+		var searchForMore = true; var searchInterest_base = 10; var searchInterest = searchInterest_base;
 		function additionalVerseRetriever(){
 			if(allowRetrieval){
 				// generate the fraction value of how far the user is from the bottom of the page
@@ -72,6 +72,8 @@
 						function(data){
 							if( data.length != 0 ){ 
 								dealWithData(data, document.body);
+								searchInterest = searchInterest_base;
+							}else{
 								searchInterest--;
 								if(searchInterest <= 0){ clearInterval(dynamicVerseRetrieval_processID); }
 							}
