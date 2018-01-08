@@ -36,7 +36,7 @@
 
 			highestVerse = higher;
 
-			
+
 			// actual retrieval of verses
 			simpleGetJSON(
 				"{% url 'api_verseData' %}" + lower + "/" + higher + "/",
@@ -50,8 +50,10 @@
 		// attempt to run the additionalVerseRetriever every 'retrievalCheckTime' milliseconds.
 		// The function is clever, and won't allow itself to be run until 'allowRetrievalTimout' milliseconds
 		// have passed since the last time it was run.
-		setInterval( additionalVerseRetriever, retrievalCheckTime );
+		// If enough attemps at getting more verses go with nothing returne; this process is stopped
+		var dynamicVerseRetrieval_processID = setInterval( additionalVerseRetriever, retrievalCheckTime );
 		var allowRetrieval = true;
+		var searchForMore = true; var searchInterest = 10;
 		function additionalVerseRetriever(){
 			if(allowRetrieval){
 				// generate the fraction value of how far the user is from the bottom of the page
@@ -68,10 +70,12 @@
 					simpleGetJSON(
 						"{% url 'api_verseData' %}" + (highestVerse+1) + "/" + (highestVerse+radius) + "/",
 						function(data){
-							if( data.length != 0 ){
+							if( data.length != 0 ){ 
 								dealWithData(data, document.body);
-								highestVerse = highestVerse + data.length;
+								searchInterest--;
+								if(searchInterest <= 0){ clearInterval(dynamicVerseRetrieval_processID); }
 							}
+							highestVerse = highestVerse + radius;
 						}
 					);
 				}
