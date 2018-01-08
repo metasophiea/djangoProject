@@ -12,9 +12,9 @@ except:
     SECRET_KEY = '6*4$_taj=v6^1pa^c69vddq12+1x(8kgstr6izblpzi2@q7-6)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['178.62.111.52','metasophiea.eu','dev.metasophiea.eu']
+ALLOWED_HOSTS = ['192.168.122.15','metasophiea.eu','dev.metasophiea.eu']
 
 ADMINS = [('Brandon', 'metasophiea@gmail.com')]
 

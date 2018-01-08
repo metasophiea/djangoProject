@@ -5,8 +5,6 @@
 	<title>continuousVerse</title>
 	<meta charset="utf-8">
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
     {% load static from staticfiles  %}
 	<script src="{% static "conVerse/js/main.js" %}"></script>
 	
@@ -14,8 +12,18 @@
     <link rel="stylesheet" href="{% static "conVerse/css/verse.css" %}">
 
 	<script>
+		var radius = 4;
+		var highestVerse;
+		var retrievalCheckTime = 500;
+		var allowRetrievalTimout = 2000;
+		var lowerTreshold = 0.8;
+
+
+
 		function go(){
-			var radius = 5;
+			// using the number conatined in the url (if it's there at all), figure out
+			// the range of verses that surround the one in this position, using the 
+			// 'radius' value
 			var index = parseInt(window.location.pathname.toString().replace(/\//g, ''));
 			index = isNaN(index) ? 0 : index;
 
@@ -25,13 +33,51 @@
 				higher = higher - lower;
 				lower = 0;
 			}
-			$.getJSON(
+
+			highestVerse = higher;
+
+			
+			// actual retrieval of verses
+			simpleGetJSON(
 				"{% url 'api_verseData' %}" + lower + "/" + higher + "/",
 				function(data){
 					dealWithData(data, document.body);
 				}
 			);
 		}
+
+
+		// attempt to run the additionalVerseRetriever every 'retrievalCheckTime' milliseconds.
+		// The function is clever, and won't allow itself to be run until 'allowRetrievalTimout' milliseconds
+		// have passed since the last time it was run.
+		setInterval( additionalVerseRetriever, retrievalCheckTime );
+		var allowRetrieval = true;
+		function additionalVerseRetriever(){
+			if(allowRetrieval){
+				// generate the fraction value of how far the user is from the bottom of the page
+				var scroll = document.documentElement.scrollTop || document.body.scrollTop;
+				var fractionToBottom = scroll / (document.getElementsByTagName("html")[0].offsetHeight-window.innerHeight);
+
+				// assuming they are below some treshold, begin retrieval of the next couple of verses
+				if( fractionToBottom > lowerTreshold ){
+					// disallow an additional retrieval until an amount of time has passed
+					allowRetrieval = false; setTimeout(function(){allowRetrieval = true;},allowRetrievalTimout);
+
+					// actual retrieval of the new verses. 'highestVerse' counter is also updated.
+					// no elements are added if no verses are available
+					simpleGetJSON(
+						"{% url 'api_verseData' %}" + (highestVerse+1) + "/" + (highestVerse+radius) + "/",
+						function(data){
+							if( data.length != 0 ){
+								dealWithData(data, document.body);
+								highestVerse = highestVerse + data.length;
+							}
+						}
+					);
+				}
+			}
+		}
+
 	</script>
 </head>
 
