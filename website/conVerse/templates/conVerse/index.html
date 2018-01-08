@@ -50,7 +50,7 @@
 		// attempt to run the additionalVerseRetriever every 'retrievalCheckTime' milliseconds.
 		// The function is clever, and won't allow itself to be run until 'allowRetrievalTimout' milliseconds
 		// have passed since the last time it was run.
-		// If enough attemps at getting more verses go with nothing returne; this process is stopped
+		// If enough attemps at getting more verses go with nothing returned; this process is stopped
 		var dynamicVerseRetrieval_processID = setInterval( additionalVerseRetriever, retrievalCheckTime );
 		var allowRetrieval = true;
 		var searchForMore = true; var searchInterest_base = 10; var searchInterest = searchInterest_base;
