@@ -11,3 +11,8 @@ html{ font-family: Raleway; }
 .link:hover{
     color: #333333;
 }
+
+.verseText{
+    color: #000000;
+    font-size: 20px;
+}

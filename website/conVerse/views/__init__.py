@@ -1,1 +1,1 @@
-from . import index, profile, verse, pageError, api_getVerse, api_updateVerse, api_updateUserdata
+from . import index, profile, verse, guide, pageError, api_getVerse, api_updateVerse, api_updateUserdata

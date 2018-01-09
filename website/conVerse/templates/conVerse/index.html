@@ -56,12 +56,11 @@
 		var searchForMore = true; var searchInterest_base = 10; var searchInterest = searchInterest_base;
 		function additionalVerseRetriever(){
 			if(allowRetrieval){
-				// generate the fraction value of how far the user is from the bottom of the page
-				var scroll = document.documentElement.scrollTop || document.body.scrollTop;
-				var fractionToBottom = scroll / (document.getElementsByTagName("html")[0].offsetHeight-window.innerHeight);
+				var distanceFromBottom = 0; // the pixel distance from the bottom of the page
+				var scroll = document.documentElement.scrollTop || document.body.scrollTop; // get the user's scroll position
 
-				// assuming they are below some treshold, begin retrieval of the next couple of verses
-				if( fractionToBottom > lowerTreshold ){
+				// if the user is some distance from the bottom of the page; attempt to get more verses
+				if( ((document.getElementsByTagName("html")[0].offsetHeight-window.innerHeight-distanceFromBottom) <= scroll) ){
 					// disallow an additional retrieval until an amount of time has passed
 					allowRetrieval = false; setTimeout(function(){allowRetrieval = true;},allowRetrievalTimout);
 

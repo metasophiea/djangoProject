@@ -18,9 +18,28 @@ try:
 except: print("-- Note: the secret admin address file was not found and this server was started using the default address instead --")
 
 urlpatterns = [
+	# Landing page
+	url(r'^$', views.index.index),
+	url(r'^(?P<index>(\d+))/$', views.index.index),
+
+	# Other addresses
+	url(r'^verseData/$', views.api_getVerse.api_getVerse, name='api_verseData'),
+	url(r'^verseData/(?P<index>(\d+))/$', views.api_getVerse.api_getVerse),
+	url(r'^verseData/(?P<start>(\d+))/(?P<end>(\d+))/$', views.api_getVerse.api_getVerse),
+
+	url(r'^updateScreenname/$', views.api_updateUserdata.api_updateScreenname, name='api_updateScreenname'),
+	url(r'^updateVersePosition/$', views.api_updateVerse.api_updatePosition, name='api_updateVersePosition'),
+	url(r'^updateVerse/$', views.api_updateVerse.api_updateVerse, name='api_updateVerse'),
+
+	url(r'^profile/$', views.profile.profile, name='profile'),
+	url(r'^verse/(?P<index>(\d+))/$', views.verse.verse),
+	url(r'^guide/$', views.guide.guide),
+
+
+
 	# Main admin address
-	# url(r'^admin/', admin.site.urls),
 	url(r'^'+adminAddress+'/', admin.site.urls),
+
 
 
 	# Authentication addresses
@@ -42,22 +61,4 @@ urlpatterns = [
     url(r'^deleteAccount/$', extraAuthViews.deleteAccount.deleteAccount, name='account_delete'), 																# auth/templates/auth/account/account_delete.html (this is an addition)
     url(r'^socialSignup/$', allauth.socialaccount.views.signup, name='socialaccount_signup'), 																	# auth/templates/auth/socialaccount/signup.html (used when the third-party sign-in uses an email address that's already in use)
 	url(r'^socialConnections/$', allauth.socialaccount.views.connections , name='socialaccount_connections'), 													# auth/templates/auth/socialaccount/connections.html
-
-
-	# Other addresses
-	url(r'^verseData/(?P<start>(\d+))/(?P<end>(\d+))/$', views.api_getVerse.api_getVerse),
-	url(r'^verseData/(?P<index>(\d+))/$', views.api_getVerse.api_getVerse),
-	url(r'^verseData/$', views.api_getVerse.api_getVerse, name='api_verseData'),
-
-	url(r'^updateScreenname/$', views.api_updateUserdata.api_updateScreenname, name='api_updateScreenname'),
-	url(r'^updateVersePosition/$', views.api_updateVerse.api_updatePosition, name='api_updateVersePosition'),
-	url(r'^updateVerse/$', views.api_updateVerse.api_updateVerse, name='api_updateVerse'),
-
-	url(r'^profile/$', views.profile.profile, name='profile'),
-	url(r'^verse/(?P<index>(\d+))/$', views.verse.verse),
-
-
-	# Landing page
-	url(r'^(?P<index>(\d+))/$', views.index.index),
-	url(r'^$', views.index.index)
 ]

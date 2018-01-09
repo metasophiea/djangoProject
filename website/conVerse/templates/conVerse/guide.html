@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title>guide - continuousVerse</title>
+
+	<meta charset='utf-8'>
+
+    {% load static from staticfiles  %}	
+    <link rel="stylesheet" href="{% static "conVerse/css/main.css" %}">
+
+    <style>
+        *{margin:0px;}
+        
+        .description{ margin: 0px 0px 0px 20px; }
+        .entry{ margin: 0px 0px 20px 0px; }
+    </style>
+
+</head>
+
+<body class='verseText' style='width:80%; margin:auto;'>
+	<section class='entry'>
+		<a class='link' href='/'>/</a>
+        <p class='description'>the main page</p>
+	</section>
+
+	<section class='entry'>
+        <a class='link' href='/n'>/n</a>
+        <p class='description'>a way of jumping to a certian verse in the stream</p>
+        <p class='description'>eg. <a class='link' href='/8'>/8</a></p>
+    </section>
+
+	<section class='entry'>
+        <a class='link' href='/verse/n'>/verse/n</a>
+        <p class='description'>view just one verse</p>
+        <p class='description'>eg. <a class='link' href='/verse/2'>/verse/2 </a></p>
+    </section>
+
+	<section class='entry'>
+        <a class='link' href='/guide'>/guide</a>
+        <p class='description'>a simple guide to this website</p>
+    </section>
+
+	<section class='entry'>
+        <a class='link' href='/login'>/login</a>
+        <p class='description'>account login page</p>
+    </section>
+    
+	<section class='entry'>
+        <a class='link' href='/signup'>/signup</a>
+        <p class='description'>account signup page </p>
+    </section>
+
+	<section class='entry'>
+        <a class='link' href='/profile'>/profile</a>
+        <p class='description'>main profile page where one can edit their screenname and verse</p>
+        <p class='description'>One is also able to change their password here and perform a number of actions related to their email or connected social accounts</p>
+    </section>
+
+</body>

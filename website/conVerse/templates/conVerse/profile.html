@@ -20,7 +20,7 @@
                 <th id='leftSection' style='text-align:left; float:left;'>
                     <form id='screennameBox' method='POST' action='{% url 'api_updateScreenname' %}'>
                         {% csrf_token %}
-                        <input id='screenname'  type='text' name='screenname' maxlength='{{ screennameMaxLength }}' value='{{ userdata.screenname }}' placeholder='screen name' autocomplete='off'/>
+                        <input id='screenname' type='text' name='screenname' maxlength='{{ screennameMaxLength }}' value='{{ userdata.screenname }}' placeholder='screen name' autocomplete='off'/>
                     </form>
                     <h2 id='username'>{{ user.username }}</h2>
                 </th>
